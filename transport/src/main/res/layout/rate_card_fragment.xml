@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.fragment.ratecard.RateCardViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.ratecard.RateCardFragment">
+
+        <include
+            android:id="@+id/fab_top"
+            layout="@layout/rate_card_fab_layout" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTaxiWhite"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/tvLabelBaseFare"
+                    style="@style/SmallText.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/taxi_invoice_base_fare" />
+
+                <TextView
+                    android:id="@+id/tvBaseFare"
+                    style="@style/SmallText.colorGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    tools:text="$5" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/tvLabelFareKm"
+                    style="@style/SmallText.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/taxi_rate_card_fare_km" />
+
+                <TextView
+                    android:id="@+id/tvFareKm"
+                    style="@style/SmallText.colorGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    tools:text="$1" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/tvLabelTimeFareKm"
+                    style="@style/SmallText.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/taxi_rate_card_fare_km" />
+
+                <TextView
+                    android:id="@+id/tvTimeFare"
+                    style="@style/SmallText.colorGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    tools:text="$1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/tvLabelFareType"
+                    style="@style/SmallText.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/taxi_fare_type" />
+
+                <TextView
+                    android:id="@+id/tvFareType"
+                    style="@style/SmallText.colorGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/distance" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/tvLabelCapacity"
+                    style="@style/SmallText.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/taxi_capacity" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCapacity"
+                    android:layout_width="@dimen/_10sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_capacity"/>
+
+                <TextView
+                    android:id="@+id/tvCapacity"
+                    style="@style/SmallText.colorGrey"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_height="wrap_content"
+                    tools:text="0" />
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/btnSchedule"
+                style="@style/MediumText.colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@color/colorTaxiPrimary"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/taxi_rate_card_done"
+                tools:ignore="UnusedAttribute" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

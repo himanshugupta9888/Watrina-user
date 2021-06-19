@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName">
+
+    <!--BaseModule-->
+    <color name="colorPrimary" tools:ignore="MissingDefaultResource">#068e9f</color>
+    <color name="colorPrimaryDark">#075E68</color>
+    <color name="colorAccent">#068e9f</color>
+    <color name="colorPrimaryLight">#068e9f</color>
+    <color name="colorPrimaryTransparent">#6B006B00</color>
+    <color name="button_textcolor">#ffffff</color>
+    <color name="dark_grey">#666772</color>
+    <color name="grey">#989fcb</color>
+    <color name="grey_light">#F3F3F3</color>
+    <color name="app_background_color">#f2f2f2</color>
+    <color name="et_stroke_color">#4F666772</color>
+    <color name="et_text_color">#888888</color>
+    <color name="blue">#2196F3</color>
+    <color name="red">#fc3a14</color>
+    <color name="colorDarkRed">#C62708</color>
+    <color name="colorDarkGreen">#239404</color>
+    <color name="cancel_bg_red">#FFE4DA</color>
+    <color name="completed_bg_green">#DAFFF3</color>
+    <color name="completed_text">#4CB894</color>
+    <color name="schedule_blue">#65fff2</color>
+    <color name="schedule_blue_txt">#11aba9</color>
+    <color name="yellow">#ffa200</color>
+    <color name="login_icon_selected_color">#f1f3ff</color>
+    <color name="order_normal_txt_color">#686974</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="card_left_bg">#2676bc</color>
+    <color name="card_unselected">#faf9f6</color>
+    <color name="lightgrey">#EBEBEB</color>
+    <color name="darkgrey">#505050</color>
+
+    <color name="black">#000000</color>
+
+    <color name="colorBasePrimary" >#364bea</color>
+    <color name="colorBaseTheme">#364bea</color>
+    <color name="colorBaseWhite">#FFFFFF</color>
+    <color name="bg_payment">#FFF4F4F4</color>
+    <!-- Card list -->
+    <color name="bg_card_default">#F2F2F2</color>
+    <color name="bg_button_delete">#FFE4F0FE</color>
+    <color name="bg_card_selected">#FF055EAB</color>
+
+
+    <!--TransportModule-->
+
+    <color name="colorTaxiPrimary">#ffa800</color>
+    <color name="colorTaxiTheme">#2676bc</color>
+
+    <color name="colorTaxiGreyLight">#F8F7F6</color>
+    <color name="colorTaxiBlack">#000000</color>
+    <color name="colorTaxiWhite">#FFFFFF</color>
+    <color name="colorTaxiGrey">#888888</color>
+    <color name="colorTaxiGrey1">#F2F2F2</color>
+    <color name="colorTaxiGrey2">#5E5E5E</color>
+    <color name="colorTaxiPinkLight">#fff9ee</color>
+    <color name="colorTaxiPinkLight1">#FFECCB</color>
+
+    <color name="fifty_percent_transparency_primary">#8003A9F4</color>
+    <color name="fifty_percent_transparency_darker_primary_dark">#80028bca</color>
+    <color name="seek_bar_primary">#03A9F4</color>
+
+    <color name="grey_100">#f5f5f5</color>
+    <color name="grey_200">#eeeeee</color>
+    <color name="grey_300">#e0e0e0</color>
+    <color name="grey_400">#bdbdbd</color>
+
+    <!--ServiceModule-->
+    <color name="colorXuberPrimary">#0968AA</color>
+    <color name="colorXuberBlack">#000000</color>
+    <color name="colorXuberWhite">#FFFFFF</color>
+    <color name="colorXuberYellow">#ffa800</color>
+    <color name="colorXuberGreyLight">#F8F7F6</color>
+    <color name="colorXuberGrey2">#5E5E5E</color>
+
+    <!--OrderModule-->
+    <color name="foodie_red">#fc3a14</color>
+    <color name="foodie_app_bg">#f2f2f2</color>
+    <color name="greay">#C6C7D3</color>
+
+    <!-- Transaction List -->
+    <color name="dispute_status_open">#FF1717</color>
+    <color name="credit">#22FF20</color>
+
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/foodie_app_bg">
+
+
+        <TextView
+            android:id="@+id/orderitem_name_quantatity_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_veg"
+            android:drawablePadding="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/dummy_order_item"
+            style="@style/VerySmallText"
+            android:textColor="@color/darkgrey" />
+
+        <TextView
+            android:id="@+id/order_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:gravity="center"
+            style="@style/VerySmallText"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/dummy_price" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="upcomingfragmentviewmodel"
+            type="com.gox.app.ui.upcoming_fragment.UpcomingFragmentViewmodel" />
+
+        <variable
+            name="upcomingOrderAdapter"
+            type="com.gox.app.adapter.UpcomingOrdersAdapter" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/upcoming_ordersfrg_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{upcomingOrderAdapter}"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            android:id="@+id/empty_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_no_history" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                style="@style/SmallText"
+                android:text="@string/you_have_no_upcoming_data"
+                android:textColor="@color/darkgrey" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

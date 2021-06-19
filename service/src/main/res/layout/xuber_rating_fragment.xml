@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shadow"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/MediumText.colorBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/rating" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_driver_profile"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10sdp"
+                android:src="@drawable/ic_profile_place_holder" />
+
+            <TextView
+                android:id="@+id/tvProviderName"
+                style="@style/SmallText.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_toEndOf="@+id/civ_driver_profile"
+                tools:text="Dwayne Jhonathson" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rv_user"
+                style="@android:style/Widget.Material.Light.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_rating_label"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10sdp"
+                android:numStars="5"
+                android:rating="1"
+                android:scaleX="0.7"
+                android:scaleY="0.8"
+                android:stepSize="1"
+                android:theme="@style/RatingBar" />
+
+            <EditText
+                android:id="@+id/comment_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/xuber_grey_rounded_bg"
+                android:gravity="start|top"
+                style="@style/MediumText"
+                android:hint="@string/xuber_leave_your_comments"
+                android:inputType="text"
+                android:maxHeight="@dimen/_100sdp"
+                android:minHeight="@dimen/_80sdp"
+                android:padding="@dimen/_8sdp"
+                android:textSize="@dimen/_12sdp" />
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@+id/providerDetailLayout"
+                />
+
+            <TextView
+                android:id="@+id/btSubmitRating"
+                style="@style/BoldText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:text="@string/xuber_submit"
+                android:textColor="@color/colorAccent" />
+
+
+        </LinearLayout>
+
+
+</layout>

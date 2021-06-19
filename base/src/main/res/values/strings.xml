@@ -1,0 +1,103 @@
+<resources>
+    <string name="allow">Allow</string>
+    <string name="deny">Deny</string>
+
+    <string-array name="payment_mode">
+        <item>Cash</item>
+        <item>Card</item>
+    </string-array>
+    <string name="edit">Edit</string>
+    <string name="balance">( %.2f )</string>
+    <string name="trans_bal">%.2f</string>
+    <string name="empty_wallet_amount">Please Enter the Amount</string>
+    <string name="chat">Chat</string>
+    <string name="dummy_amount">$ 15</string>
+    <string name="dummy_date">12 Aug</string>
+    <string name="add_card">Add Card</string>
+    <string name="wallet">Wallet</string>
+    <string name="enter_amount">Enter amount</string>
+    <string name="_50">$50</string>
+    <string name="_1000">$1000</string>
+    <string name="_100">$100</string>
+    <string name="add_amount">Add amount</string>
+    <string name="amount">Amount</string>
+    <string name="transaction_id">Transaction Id</string>
+    <string name="default_wallet_amount">0</string>
+    <string name="manage_address">Manage Address</string>
+    <string name="address_delete">Are you sure want to delete address?</string>
+    <string name="enter_details">Enter the Details</string>
+    <string name="no_address_found">No Address Found</string>
+    <string name="flat_number">Flat Number</string>
+    <string name="street">Street Name</string>
+    <string name="landmark">Landmark</string>
+    <string name="save_as">Save as</string>
+    <string name="title">Title</string>
+    <string name="confirm_location">Confirm Location</string>
+    <string name="saved_location">Saved Locations</string>
+    <string name="title_activity_add_address">AddAddressActivity</string>
+    <string name="dummy_title">Title</string>
+    <string name="dummy_min">12mins</string>
+    <string name="mins">Mins</string>
+    <string name="password_updated">Password Updated Successfully</string>
+    <string name="taxi_bookforsomeone_submit">Submit</string>
+    <string name="amount_added">Amount Added Successfully</string>
+    <string name="transaction">Transaction</string>
+    <string name="saved_card">Saved Card</string>
+    <string name="row_card_number">XXXX XXXX %s</string>
+    <string name="empty_card">Please choose any card</string>
+    <string name="dummy_transaction_id">abc123asda</string>
+    <string name="add_new_address">Add New Address</string>
+    <string name="taxi_leave_your_comments">Leave Your Comments</string>
+    <string name="delete">Delete</string>
+    <string name="payment">Payment</string>
+    <string name="date">Date</string>
+    <string name="no_transaction_found">No Transaction Found</string>
+    <string name="valid_title">Enter Valid title</string>
+    <string name="no_services">No Services Available</string>
+    <string name="location_permission_denied">Location permission denied</string>
+    <string name="location_permission_rationale">Location Permission is needed to get current location</string>
+    <string name="total_discount">Total Discount</string>
+    <string name="package_charge">Packing Charge</string>
+    <string name="tax_amount">Tax Amount</string>
+    <!--Map Error Strings-->
+    <string name="NoRoadMapAvailable">No road map available…</string>
+    <string name="WayPointLlimitExceeded">Way point limit exceeded…</string>
+    <string name="RoadMapLimitExceeded">Road map limit exceeded…</string>
+    <string name="InvalidInputs">Invalid inputs…</string>
+    <string name="MayBeInvalidAPIBillingPendingMethodDeprecated">MayBe invalid API/Billing pending/Method Deprecated…</string>
+    <string name="TooManyRequestlimitExceeded">Too many request, limit exceeded…</string>
+    <string name="DirectionsServiceNotEnabled">Directions service not enabled…</string>
+    <string name="ServerError">Server Error…</string>
+    <string name="visa">Visa</string>
+    <string name="status">Status</string>
+    <string name="card_invalid">Card details invalid</string>
+
+    <string name="credited">Credited</string>
+    <string name="depited">Debited</string>
+    <string name="payment_modes">Available Payment Types</string>
+    <string name="payments">Payments</string>
+    <string name="choose_payment">Choose Payment</string>
+    <string name="default_amount">0</string>
+    <string name="no_internet_connection">No Internet Connection :(</string>
+    <string name="card_holder_name">Card Holder Name</string>
+    <string name="valid_flat_number">Enter flat number</string>
+    <string name="valid_street_name">Enter street name</string>
+    <string name="valid_landmark_name">Enter landmark name</string>
+    <string name="error_card_number">Card number not added</string>
+    <string name="error_card_expiry">Card expiry not added</string>
+    <string name="error_cvv">CVV not added</string>
+    <string name="error_card_holder">Card holder name not added</string>
+    <string name="image_view">ImageView</string>
+    <plurals name="numberOfItems">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+
+    <string name="send_amount">Send amount</string>
+    <string name="receive_amount">Receive amount</string>
+    <string name="mobile">Mobile</string>
+    <string name="send">Send</string>
+    <string name="empty_amount">Please Enter the Amount</string>
+    <string name="save">Save</string>
+
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="position"
+            type="Integer" />
+
+        <variable
+            name="item"
+            type="com.gox.app.data.repositary.remote.model.AccountMenuModel" />
+
+        <variable
+            name="adapter"
+            type="com.gox.app.ui.myaccount_fragment.AccountMenuAdapter" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="1dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:onClick="@{()->adapter.onItemClick(position)}">
+
+            <ImageView
+                android:id="@+id/ivTitleIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@color/colorPrimary"
+                android:contentDescription="@string/image_view"
+                android:padding="12dp"
+                android:src="@{item.component2()}"
+                android:tint="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/home" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/font_normal"
+                android:maxLines="1"
+                android:text="@{item.component1()}"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivTitleIcon"
+                app:layout_constraintEnd_toStartOf="@+id/ivArrow"
+                app:layout_constraintStart_toEndOf="@id/ivTitleIcon"
+                app:layout_constraintTop_toTopOf="@id/ivTitleIcon"
+                tools:text="Profile" />
+
+            <ImageView
+                android:id="@+id/ivArrow"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/image_view"
+                android:src="@drawable/ic_arrow_right"
+                android:tint="@color/colorBlack"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

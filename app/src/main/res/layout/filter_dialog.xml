@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="orderfragmentviewmodel"
+            type="com.gox.app.ui.order_fragment.OrderFragmentViewModel" />
+
+        <variable
+            name="filterServiceListAdapter"
+            type="com.gox.app.adapter.FilterServiceListAdapter" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background_color"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp">
+
+            <TextView
+                style="@style/MediumText.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_normal"
+                android:text="@string/filter_by"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/MediumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@string/reset"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/servicelist_frghome_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adapter="@{filterServiceListAdapter}"
+            android:padding="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3" />
+
+        <Button
+            android:id="@+id/apply_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_17sdp"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/font_normal"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/apply"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp" />
+
+    </LinearLayout>
+
+</layout>

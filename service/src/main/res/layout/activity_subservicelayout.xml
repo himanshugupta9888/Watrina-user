@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="xuberSubServiceViewModel"
+            type="com.gox.xubermodule.ui.activity.xubersubserviceactivity.XuberSubServiceViewModel" />
+
+        <variable
+            name="subServiceAdapter"
+            type="com.gox.xubermodule.ui.adapter.XuberSubServiceAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_color"
+        android:orientation="vertical"
+        tools:context=".ui.activity.mainactivity.XuberMainActivity">
+
+        <include
+            android:id="@+id/subservice_toolbar"
+            layout="@layout/toolbar_service_category" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvXuberSubservice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_below="@+id/subservice_toolbar"
+            android:adapter="@{subServiceAdapter}"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:padding="@dimen/_10sdp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <TextView
+            android:id="@+id/no_services_tv"
+            style="@style/MediumText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/no_services"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="@dimen/_8sdp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/MediumText.colorWhite"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/xuber_bg_round_corner"
+                android:gravity="center"
+                android:onClick="@{()->xuberSubServiceViewModel.onClickScheduleNow()}"
+                android:text="@string/xuber_schedule"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/MediumText.colorWhite"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/xuber_bg_round_corner"
+                android:gravity="center"
+                android:onClick="@{()->xuberSubServiceViewModel.onClickBookNow()}"
+                android:text="@string/book_now"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

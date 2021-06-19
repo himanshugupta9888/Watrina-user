@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.xubermodule.ui.activity.locationpick.LocationPickViewModel" />
+
+        <variable
+            name="placemodel"
+            type="com.gox.xubermodule.ui.activity.locationpick.PlacesAdapter" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_location_pick" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <fragment
+                android:id="@+id/fragmentMap"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <RelativeLayout
+                android:id="@+id/pick_location_holder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@color/colorWhite">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etLocationPick"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@id/ivClear"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:gravity="start|center"
+                    android:hint="@string/enter_your_location"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    style="@style/MediumText"
+                    android:minLines="1"
+                    android:padding="10dp"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/ivClear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/done"
+                    android:padding="15dp"
+                    android:src="@drawable/ic_taxi_close" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_taxi_pin" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAutoCompletePlaces"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pick_location_holder"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:adapter="@{placemodel}"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <LinearLayout
+                android:id="@+id/llAddressContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/grey"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/rlHomeAddressContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/colorWhite"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivHome"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/home"
+                        android:src="@drawable/ic_taxi_home" />
+
+                    <TextView
+                        android:id="@+id/tvHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/ivHome"
+                        android:text="@string/home"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tvHomeAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvHome"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/ivHome"
+                        android:text="@string/text_placeholder"
+                        android:textSize="@dimen/_11sdp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlWorkAddressContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/colorWhite"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivWork"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/work"
+                        android:src="@drawable/ic_xuber_work" />
+
+                    <TextView
+                        android:id="@+id/tvWork"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/ivWork"
+                        android:text="@string/work"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tvWorkAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvWork"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_toEndOf="@+id/ivWork"
+                        android:text="@string/text_placeholder"
+                        android:textSize="@dimen/_11sdp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/xuber_custom_round_corner"
+                android:backgroundTint="@color/colorAccent"
+                android:padding="@dimen/_10sdp"
+                android:layout_alignParentBottom="true"
+                android:text="@string/done"
+                style="@style/BoldText"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </RelativeLayout>
+
+<!--        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">-->
+
+<!--
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/xuber_custom_round_corner"
+                android:backgroundTint="@color/colorAccent"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/done"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_12sdp" />
+-->
+
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+
+</layout>

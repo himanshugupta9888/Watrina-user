@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/colorXuberPrimary" />
+
+            <size
+                android:width="@dimen/_30sdp"
+                android:height="@dimen/_30sdp" />
+        </shape>
+    </item>
+
+    <item
+        android:bottom="@dimen/_3sdp"
+        android:drawable="@drawable/ic_xuber_searching"
+        android:left="@dimen/_3sdp"
+        android:right="@dimen/_3sdp"
+        android:top="@dimen/_3sdp">
+
+    </item>
+
+
+</layer-list>

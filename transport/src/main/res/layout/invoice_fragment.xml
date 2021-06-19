@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.fragment.invoice.InvoiceViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTaxiGrey1"
+        android:clickable="true"
+        android:fillViewport="true"
+        android:focusable="true"
+        android:isScrollContainer="true"
+        tools:context=".ui.fragment.invoice.InvoiceFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorTaxiGrey1"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tvInvoice"
+                    style="@style/MediumText.colorBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/invoice" />
+
+                <ImageView
+                    android:id="@+id/iv_taxi_invoice"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_below="@+id/tvInvoice"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/bg_rounded_invoice"
+                    android:elevation="@dimen/_10sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvTaxiSourceDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_taxi_invoice"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:cardBackgroundColor="@color/colorTaxiWhite"
+                    app:cardCornerRadius="@dimen/_3sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_7sdp">
+
+                        <TextView
+                            android:id="@+id/tv_source_destination"
+                            style="@style/VerySmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:fontFamily="@font/font_normal"
+                            android:text="@string/taxi_source_and_destination" />
+
+                        <LinearLayout
+                            android:id="@+id/source_lt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_source_destination"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/iv_taxi_source_dot"
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_10sdp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/app_name"
+                                android:padding="@dimen/_2sdp"
+                                android:src="@drawable/taxi_circle_grey" />
+
+                            <TextView
+                                android:id="@+id/tv_taxi_source_location"
+                                style="@style/VerySmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                tools:text="evtgbyhunjngft" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_taxi_invoice_line"
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="@dimen/_18sdp"
+                            android:layout_below="@+id/source_lt"
+                            android:layout_marginStart="@dimen/_4sdp"
+                            android:background="@color/colorTaxiGrey" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/view_taxi_invoice_line"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/iv_taxi_destination_dot"
+                                android:layout_width="@dimen/_10sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:contentDescription="@string/app_name"
+                                android:padding="@dimen/_2sdp"
+                                android:src="@drawable/taxi_square_black" />
+
+                            <TextView
+                                android:id="@+id/tv_taxi_destination_location"
+                                style="@style/VerySmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                tools:text="evtgbyhunjngftd" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvTaxiInvoiceDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvTaxiSourceDestination"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_3sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/rlTaxiInvoiceDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/tvLabelBookingID"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_booking_id" />
+
+                            <TextView
+                                android:id="@+id/tvBookingID"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:fontFamily="@font/font_normal"
+                                android:text="" />
+
+                            <TextView
+                                android:id="@+id/tvLabelDistanceTravelled"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelBookingID"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_distance_travelled" />
+
+
+                            <TextView
+                                android:id="@+id/tvDistanceTravelled"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelBookingID"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                tools:text="1 KM" />
+
+                            <TextView
+                                android:id="@+id/tvLabelTimeTaken"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelDistanceTravelled"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_time_taken" />
+
+                            <TextView
+                                android:id="@+id/tvTimeTaken"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelDistanceTravelled"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                tools:text="0 mins" />
+
+                            <TextView
+                                android:id="@+id/tvLabelBaseFare"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelTimeTaken"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_invoice_base_fare" />
+
+                            <TextView
+                                android:id="@+id/tvBaseFare"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelTimeTaken"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                tools:text="$5" />
+
+                            <TextView
+                                android:id="@+id/tvLabelDistanceFare"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelBaseFare"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_invoice_distance_fare" />
+
+                            <TextView
+                                android:id="@+id/tvDistanceFare"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelBaseFare"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                tools:text="$8" />
+
+                            <TextView
+                                android:id="@+id/tvLabelDisCount"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelDistanceFare"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_discount_fare"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/tvDisCountFare"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvDistanceFare"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:textColor="@color/red"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/tvLabelWaitingTime"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelDisCount"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_waiting_fare"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/tvLabelWaitingTimeFare"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvDisCountFare"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/tvLabelToll"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelWaitingTime"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_toll_fare"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/tvLabelTollFare"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelWaitingTimeFare"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/tvLabelTax"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelToll"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_invoice_tax" />
+
+                            <TextView
+                                android:id="@+id/tvTax"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelTollFare"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                tools:text="$2" />
+
+
+                            <TextView
+                                android:id="@+id/tvLabelTips"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelTax"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/tips" />
+
+                            <TextView
+                                android:id="@+id/tvAddTips"
+                                style="@style/SmallText.colorTaxiPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelTax"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_add_tips" />
+
+                            <TextView
+                                android:id="@+id/tvTipsAmount"
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelTax"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_add_tips"
+                                android:visibility="gone" />
+
+                            <TextView
+                                style="@style/SmallText.colorGrey"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelTips"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:text="@string/taxi_invoice_total" />
+
+                            <TextView
+                                android:id="@+id/totalPayableAmount"
+                                style="@style/SmallText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvLabelTips"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:maxWidth="@dimen/_150sdp"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                tools:text="$2" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/colorTaxiPinkLight"
+                            android:elevation="@dimen/_5sdp"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp">
+
+                            <TextView
+                                style="@style/MediumText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/font_normal"
+                                android:text="@string/payable"
+                                android:textColor="@color/colorTaxiPrimary" />
+
+                            <TextView
+                                android:id="@+id/PayableAmount"
+                                style="@style/MediumText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:fontFamily="@font/font_normal"
+                                android:textColor="@color/colorTaxiPrimary" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvTaxiInvoiceDetails"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_14sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:cardCornerRadius="@dimen/_3sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_45sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@color/colorTaxiWhite"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/tvLabelPaymentVia"
+                            style="@style/VerySmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_25sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/font_normal"
+                            android:text="@string/taxi_invoice_payment_via" />
+
+                        <!-- <TextView
+                             android:id="@+id/tvPaymentType"
+                             style="@style/VerySmallText.Black"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_below="@+id/tvLabelPaymentVia"
+                             android:layout_marginStart="@dimen/_25sdp"
+                             android:layout_marginTop="@dimen/_2sdp"
+                             android:drawableEnd="@drawable/ic_xuber_credit_card"
+                             android:drawablePadding="@dimen/_10sdp"
+                             android:text="Card" />-->
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvLabelPaymentVia"
+                            android:layout_marginStart="@dimen/_25sdp"
+                            android:layout_marginTop="@dimen/_2sdp">
+
+                            <TextView
+                                android:id="@+id/tvPaymentType"
+                                style="@style/VerySmallText.Black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawablePadding="@dimen/_10sdp"
+                                android:fontFamily="@font/font_normal"
+                                android:text="@string/cash" />
+
+                            <ImageView
+                                android:id="@+id/iv_payment_mode"
+                                android:layout_width="@dimen/_30sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:src="@drawable/ic_money" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvTaxiChangePayment"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_20sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:fontFamily="@font/font_normal"
+                            android:text="@string/taxi_payment_change"
+                            android:textColor="@color/colorTaxiPrimary" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tvTotalAmount"
+                        style="@style/VerySmallText.colorTaxiWhite"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_gravity="start|top"
+                        android:layout_marginStart="@dimen/_minus3sdp"
+                        android:layout_marginTop="@dimen/_minus3sdp"
+                        android:background="@drawable/bg_rounded_invoice_payment"
+                        android:fontFamily="@font/font_normal"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp" />
+
+                </FrameLayout>
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btConfirm"
+                style="@style/MediumText.colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/taxi_round_corner_button"
+                android:fontFamily="@font/font_normal"
+                android:onClick="@{() -> viewModel.showRating()}"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/taxi_invoice_confirm"
+                android:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

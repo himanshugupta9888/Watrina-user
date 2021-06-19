@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_app"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorWhite"
+        android:elevation="4dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_toolbar_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="@null"
+                android:paddingStart="10dp"
+                android:paddingEnd="20dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_left_arrow" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/font_normal"
+                android:textSize="@dimen/_12sdp"
+                android:layout_toEndOf="@id/iv_toolbar_back"
+                android:gravity="start|center_vertical"
+                tools:text="@string/app_name" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+</layout>

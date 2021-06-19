@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="languageViewModel"
+            type="com.gox.app.ui.language_setting.LanguageViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTaxiGrey1"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_layout" />
+
+        <TextView
+            android:id="@+id/tvSelectLanguage"
+            android:layout_below="@+id/toolbar"
+            style="@style/SmallText.Black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="@string/select_language" />
+
+
+        <LinearLayout
+            android:layout_below="@+id/tvSelectLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_white_rounded_corner_rect"
+            android:backgroundTint="@color/colorWhite"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:padding="@dimen/_8sdp"
+                android:adapter="@{languageViewModel.getAdapter()}"
+                tools:listitem="@layout/language_inflate"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/save_editprofile_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_17sdp"
+            android:background="@drawable/bg_round_corner_curved"
+            android:backgroundTint="@color/colorPrimary"
+            android:paddingTop="@dimen/_8sdp"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="@string/save"
+            style="@style/SmallText"
+            android:onClick="@{() ->languageViewModel.onSaveClicked()}"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp"
+            app:cornerRadius="@dimen/_13sdp" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@drawable/xuber_bg_dotted_grey_rectangle"
+    android:padding="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/tvCouponCode"
+        style="@style/MediumText.colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey_font"
+        tools:text="GET5" />
+
+    <TextView
+        android:id="@+id/tvUseThis"
+        style="@style/MediumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="@string/xuber_use_this"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tvCouponDescription"
+        style="@style/MediumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCouponCode"
+        android:layout_marginTop="@dimen/_15sdp"
+        tools:text="Use GET5 code to get discount for your ride"
+        android:textColor="@color/dark_grey" />
+
+    <TextView
+        android:id="@+id/tvCouponValidity"
+        style="@style/SmallText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCouponDescription"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/dark_grey" />
+
+</RelativeLayout>

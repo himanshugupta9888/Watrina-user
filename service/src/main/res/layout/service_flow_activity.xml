@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gox.xubermodule.ui.activity.serviceflowactivity.ServiceFlowViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/fragmentMap"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <!--Normal Top-->
+        <LinearLayout
+            android:id="@+id/llLocationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> viewModel.goBack()}"
+                android:padding="5dp"
+                android:tint="@color/colorXuberBlack"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_xuber_back" />
+
+
+        </LinearLayout>
+
+        <!--Status Flow Top-->
+        <LinearLayout
+            android:id="@+id/llStatusFlowTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="visible">
+
+            <!--
+                        <ImageView
+                            android:id="@+id/ivBackFlow"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:onClick="@{() -> viewModel.goBack()}"
+                            android:src="@drawable/ic_xuber_back" />
+            -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/status_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:visibility="visible"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:contentPadding="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/colorXuberBlack"
+                app:cardElevation="@dimen/_5sdp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:id="@+id/img_circle"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:src="@drawable/xuber_custom_circle" />
+
+                    <LinearLayout
+                        android:id="@+id/status_flow_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/img_circle"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            style="@style/SmallText.colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/xuber_custom_circle"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_12sdp"
+                            android:text="@string/xuber_status" />
+
+                        <TextView
+                            android:id="@+id/tvStatusDescription"
+                            style="@style/SmallText"
+                            android:textColor="@color/greay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_weight="5"
+                            android:textSize="@dimen/_10sdp"
+                            android:text="@string/xuber_status" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rvLoading"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_90sdp">
+
+
+                <include layout="@layout/xuber_custom_fab_layout" />
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/xuber_bg_rounded_search_provider" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btsearchCancelRequest"
+                style="@style/MediumText.colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@color/colorXuberPrimary"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/xuber_cancel" />
+
+        </RelativeLayout>
+
+
+        <!--Status Flow Bottom-->
+        <LinearLayout
+            android:id="@+id/llStatusFlowBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/fab_xuber_menu"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:menu_colorNormal="@color/colorPrimary"
+                app:menu_colorPressed="@color/colorPrimary"
+                app:menu_colorRipple="@color/colorPrimary"
+                app:menu_fab_size="mini"
+                app:menu_icon="@drawable/ic_xuber_three_dots_more_indicator"
+                app:menu_openDirection="up"
+                app:menu_showShadow="true">
+                <!--android:visibility="@{viewModel.onRide ? View.VISIBLE:View.GONE}"-->
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_xuber_menu_call"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_xuber_call_answer"
+                    app:fab_colorNormal="@color/colorXuberPrimary"
+                    app:fab_colorPressed="@color/colorXuberPrimary"
+                    app:fab_colorRipple="@color/colorXuberPrimary"
+                    app:fab_label=""
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_xuber_menu_chat"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_xuber_chat"
+                    app:fab_colorNormal="@color/colorXuberPrimary"
+                    app:fab_colorPressed="@color/colorXuberPrimary"
+                    app:fab_colorRipple="@color/colorXuberPrimary"
+                    app:fab_label=""
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_xuber_menu_video"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/ic_xuber_video_camera"
+                    android:visibility="gone"
+                    app:fab_colorNormal="@color/colorXuberPrimary"
+                    app:fab_colorPressed="@color/colorXuberPrimary"
+                    app:fab_colorRipple="@color/colorXuberPrimary"
+                    app:fab_label=""
+                    app:fab_size="mini" />
+
+            </com.github.clans.fab.FloatingActionMenu>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvOTP"
+                        style="@style/VerySmallText.Black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/xuber_bg_rect_dotted_line"
+                        android:padding="@dimen/_10sdp"
+                        tools:text="12345"
+                        android:visibility="@{viewModel.onRide ? View.VISIBLE:View.GONE}" />
+                    <!--android:visibility="@{viewModel.onRide ? View.VISIBLE:View.GONE}"-->
+
+                    <Chronometer
+                        android:id="@+id/cmXuberServiceTime"
+                        style="@style/VerySmallText.Black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:background="@drawable/xuber_bg_rect_dotted_line"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/colorXuberBlack"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_margin="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/colorXuberWhite"
+                app:cardElevation="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/providerDetailLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civ_driver_profile"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_margin="@dimen/_10sdp"
+                            android:src="@drawable/ic_profile_place_holder" />
+
+                        <TextView
+                            android:id="@+id/tvProviderName"
+                            style="@style/VerySmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_toEndOf="@+id/civ_driver_profile"
+                            tools:text="Dwayne Jhonathson" />
+
+                        <TextView
+                            android:id="@+id/tvProviderRating"
+                            style="@style/VerySmallText.colorTaxiPrimary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvProviderName"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_toEndOf="@+id/civ_driver_profile"
+                            android:drawableEnd="@drawable/ic_xuber_star"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:gravity="center"
+                            android:padding="@dimen/_5sdp"
+                            tools:text="4.6" />
+
+                        <TextView
+                            android:id="@+id/tvService"
+                            style="@style/VerySmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:padding="@dimen/_5sdp"
+                            tools:text="@string/services" />
+
+                        <TextView
+                            android:id="@+id/tvServiceName"
+                            style="@style/VerySmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvService"
+                            android:layout_alignParentEnd="true"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:padding="@dimen/_5sdp"
+                            tools:text="Electrcian"
+                            android:textColor="@color/colorXuberPrimary" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/providerDetailLayout"
+                        android:background="@color/grey_300" />
+
+                    <TextView
+                        android:id="@+id/btCancelRequest"
+                        style="@style/MediumText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:text="@string/xuber_cancel"
+                        android:textColor="@color/colorAccent" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:elevation="@dimen/_5sdp"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="@dimen/_100sdp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+        <FrameLayout
+            android:id="@+id/main_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:elevation="2dp" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

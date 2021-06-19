@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/custom_marker_view"
+    android:layout_width="65dp"
+    android:layout_height="65dp"
+    >
+
+    <TextView
+        android:id="@+id/tvEta"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:text="ETA\n13 mins"
+        style="@style/VerySmallText"
+        android:background="@drawable/bg_marker_eta"
+        android:gravity="center"
+        android:padding="5dp" />
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="reasonadapter"
+            type="com.gox.foodiemodule.adapter.OrderCancelReasonAdapter" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvreasontype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:elevation="@dimen/_2sdp"
+        app:cardBackgroundColor="@color/colorWhite">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/reason_label_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/reason"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <ImageView
+                android:id="@+id/ivClear"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/_7sdp"
+                android:contentDescription="@string/done"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_taxi_close" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/reason_label_tv"
+                android:layout_margin="5dp"
+                android:background="@color/grey_font" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reason_types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reason_label_tv"
+                android:layout_centerHorizontal="true"
+                android:adapter="@{reasonadapter}"
+                android:minHeight="150dp"
+                android:padding="@dimen/_5sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_coments"
+                style="@style/SmallText.colorGrey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reason_types"
+                android:background="@android:color/transparent"
+                android:gravity="center|start"
+                android:hint="@string/taxi_leave_your_comments"
+                android:inputType="text"
+                android:minHeight="@dimen/_35sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/reason_submit_button"
+                style="@style/SmallText.colorTaxiPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_coments"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/taxi_bookforsomeone_submit"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.fragment.scheduleride.ScheduleViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTaxiWhite"
+        android:orientation="horizontal"
+        tools:context=".ui.fragment.scheduleride.ScheduleFragment">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/MediumText.colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/taxi_schedule_your_date_and_time" />
+
+        <LinearLayout
+            android:id="@+id/llScheduleSelection"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="@{() -> viewModel.pickDate()}"
+                app:cardBackgroundColor="@color/colorTaxiGreyLight"
+                app:cardElevation="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/ivTaxiCalendar"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/calendar"
+                        android:src="@drawable/ic_taxi_calendar" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/ivTaxiCalendar"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/SmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/taxi_schedule_date" />
+
+                        <TextView
+                            android:id="@+id/selected_date"
+                            style="@style/VerySmallText.colorGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="@string/taxi_choose_date" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:onClick="@{() -> viewModel.pickTime()}"
+                app:cardBackgroundColor="@color/colorTaxiGreyLight"
+                app:cardElevation="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/ivTaxiClock"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/calendar"
+                        android:src="@drawable/ic_taxi_clock" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_toEndOf="@+id/ivTaxiClock"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/SmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/taxi_schedule_time" />
+
+                        <TextView
+                            android:id="@+id/selected_time"
+                            style="@style/VerySmallText.colorGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="@string/taxi_choose_time" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSchedule"
+            style="@style/MediumText.colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llScheduleSelection"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@color/colorTaxiPrimary"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="@{() -> viewModel.scheduleRequest()}"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/taxi_schedule_request"
+            tools:ignore="UnusedAttribute" />
+    </RelativeLayout>
+</layout>

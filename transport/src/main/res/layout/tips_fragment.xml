@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.fragment.tips.TipsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tips_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:text="@string/taxi_tips"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/text_lt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tips_label"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:weightSum="7">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/one_curr_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorTaxiPrimary" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-30dp"
+                android:layout_marginEnd="-30dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/second_curr_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="@string/app_name" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-30dp"
+                android:layout_marginEnd="-30dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/third_curr_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="@string/app_name" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-30dp"
+                android:layout_marginEnd="-30dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/other_curr_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="@string/other" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_lt"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <RelativeLayout
+                android:id="@+id/rb_zero"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/one_dollar_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_radio_selected_btn" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-30dp"
+                android:layout_marginEnd="-30dp"
+                android:layout_weight="1"
+                android:background="#f8f7f6" />
+
+            <RelativeLayout
+                android:id="@+id/rb_two"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/two_dollar_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_radio_normal_btn" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-30dp"
+                android:layout_marginEnd="-30dp"
+                android:layout_weight="1"
+                android:background="#f8f7f6" />
+
+            <RelativeLayout
+                android:id="@+id/rb_four"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/five_dollar_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_radio_normal_btn" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="-30dp"
+                android:layout_marginEnd="-30dp"
+                android:layout_weight="1"
+                android:background="#f8f7f6" />
+
+            <RelativeLayout
+                android:id="@+id/rb_other"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/others_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_radio_normal_btn" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/ettips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radio_group"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/custom_roundcorner_button"
+            android:backgroundTint="@color/app_background_color"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:hint="@string/enter_amount"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="@dimen/_11sdp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ettips"
+            android:layout_marginBottom="@dimen/_15sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAddTips"
+                style="@style/SmallText.colorTaxiPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="end"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/tips_add"
+                android:textSize="@dimen/_12sdp" />
+        </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvtips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_15sdp"
+            android:visibility="gone">
+
+            <!--  <androidx.appcompat.widget.AppCompatEditText
+                  android:id="@+id/ettips"
+                  style="@style/SmallText.colorGrey"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="@dimen/_15sdp"
+                  android:layout_marginEnd="@dimen/_15sdp"
+                  android:gravity="center|start"
+                  android:hint="@string/tips_amount_label"
+                  android:inputType="text"
+                  android:minHeight="@dimen/_35sdp"
+                  android:paddingStart="@dimen/_15sdp"
+                  android:paddingEnd="@dimen/_15sdp"
+                  android:visibility="gone" />-->
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</layout>

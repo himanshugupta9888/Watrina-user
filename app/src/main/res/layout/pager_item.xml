@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/img_pager_item"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/app_name"
+        android:padding="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/bg_walk_two" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/description"
+        android:fontFamily="@font/font_bold"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        tools:text="Service Ongoing" />
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/SmallText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:textAlignment="viewStart"
+        android:textColor="@color/dark_grey"
+        android:textSize="15sp"
+        tools:ignore="RtlCompat"
+        tools:text="@string/lorum" />
+
+</RelativeLayout>

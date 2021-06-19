@@ -1,0 +1,3 @@
+package com.gox.foodiemodule.ui.orderdetailactivity
+
+interface OrderDetailNavigator

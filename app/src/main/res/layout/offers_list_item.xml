@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemClickListener"
+            type="com.gox.app.adapter.CustomClickListener" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent">
+
+            <ImageView
+                android:id="@+id/offerlist_img"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_113sdp"
+                android:background="@color/colorWhite"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/service_banner" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="#5000"
+                android:gravity="center"
+                android:text="@string/dummy_text"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_8sdp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

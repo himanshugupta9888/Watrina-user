@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="position"
+            type="java.lang.Integer" />
+
+        <variable
+            name="currentLanguage"
+            type="java.lang.String" />
+
+        <variable
+            name="languageViewModel"
+            type="com.gox.app.ui.language_setting.LanguageViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            style="@style/SmallText"
+            android:onCheckedChanged="@{(switch, checked) -> languageViewModel.checkedChangeListener(checked,position)}"
+            android:checked="@{currentLanguage.equalsIgnoreCase(languageViewModel.getLanguage(position).key)}"
+            android:text="@{languageViewModel.getLanguage(position).name}"/>
+
+    </RelativeLayout>
+
+</layout>

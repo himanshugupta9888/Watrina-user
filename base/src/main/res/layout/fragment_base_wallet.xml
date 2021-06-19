@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="paymentModel"
+            type="com.gox.basemodule.common.payment.managepayment.ManagePaymentViewModel" />
+
+        <variable
+            name="walletmodel"
+            type="com.gox.basemodule.common.payment.wallet.WalletViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF2F2F2"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_15sdp"
+        android:paddingRight="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/ivWallet"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/wallet_new"
+            android:tint="@color/blue_color" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivWallet"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/bg_white_payment"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+
+            <LinearLayout
+                android:id="@+id/ll_wallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/tv_wallet_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        style="@style/MediumText"
+                        android:text="@string/wallet"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_wallet_bal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_7sdp"
+                        android:layout_toEndOf="@+id/tv_wallet_label"
+                        android:gravity="center"
+                        style="@style/MediumText"
+                        android:padding="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp" />
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp"
+                    android:weightSum="4">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1.6"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/tvCurrencySymbol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            tools:text="Rs"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <EditText
+                            android:id="@+id/edt_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:layout_marginLeft="@dimen/_12sdp"
+                            android:background="@drawable/custom_roundcorner_button"
+                            android:backgroundTint="@color/app_background_color"
+                            android:fontFamily="@font/font_normal"
+                            android:hint="@string/default_amount"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_9sdp"
+                            android:singleLine="true"
+                            android:text="@={walletmodel.walletAmount}"
+                            android:textSize="@dimen/_11sdp" />
+                    </LinearLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bt_fifty"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/custom_roundcorner_button"
+                        android:backgroundTint="@color/dark_grey"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_normal"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> walletmodel.amountAdd(v)}"
+                        android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
+                        android:text="@string/_50"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bt_hundred"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/custom_roundcorner_button"
+                        android:backgroundTint="@color/dark_grey"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_normal"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> walletmodel.amountAdd(v)}"
+                        android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
+                        android:text="@string/_100"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bt_thousand"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/custom_roundcorner_button"
+                        android:backgroundTint="@color/dark_grey"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/font_normal"
+                        android:gravity="center"
+                        android:onClick="@{(v) -> walletmodel.amountAdd(v)}"
+                        android:padding="@dimen/_8sdp"
+                        android:singleLine="true"
+                        android:text="@string/_1000"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_add_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/bg_white_payment"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="@font/font_normal"
+            android:gravity="center"
+            android:onClick="@{() -> walletmodel.addWalletAmount()}"
+            android:paddingStart="@dimen/_50sdp"
+            android:paddingEnd="@dimen/_50sdp"
+            android:text="@string/add_amount"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_12sdp" />
+    </RelativeLayout>
+</layout>

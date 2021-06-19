@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="providerDetailViewModel"
+            type="com.gox.xubermodule.ui.activity.providerdetail.ProviderDetailViewModel" />
+
+        <variable
+            name="providerReviewAdapter"
+            type="com.gox.xubermodule.ui.adapter.ProviderReviewsAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_color"
+        android:orientation="vertical"
+        tools:context=".ui.activity.mainactivity.XuberMainActivity">
+
+        <include
+            android:id="@+id/subservice_toolbar"
+            layout="@layout/toolbar_service_category" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:padding="@dimen/_5sdp">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/provider_img"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_profile_place_holder" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_toEndOf="@+id/provider_img"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_2sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/provider_name_tv"
+                                style="@style/SmallText.Black"
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_weight="1.2"
+                                android:padding="@dimen/_5sdp"
+                                android:text="@string/dummy_name" />
+
+                            <TextView
+                                android:id="@+id/provider_distance_tv"
+                                style="@style/VerySmallText"
+                                android:layout_width="1dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_weight="0.8"
+                                android:gravity="end"
+                                android:padding="@dimen/_1sdp"
+                                android:text="@string/dummy_distance"
+                                android:textColor="@color/grey"
+                                android:visibility="visible" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/provider_base_fare_tv"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/SmallText"
+                                android:padding="@dimen/_5sdp"
+                                android:text="@string/dummy_provider_base_fare"
+                                android:textSize="@dimen/_12sdp" />
+
+                            <TextView
+                                android:id="@+id/provider_rating_tv"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/SmallText"
+                                android:drawableEnd="@drawable/ic_xuber_star"
+                                android:drawablePadding="@dimen/_5sdp"
+                                android:gravity="end"
+                                android:text="@string/dummy_star_rating" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@color/grey" />
+
+                <TextView
+                    style="@style/SmallText.Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_3sdp"
+                    android:text="@string/description"
+                    android:visibility="gone" />
+
+                <TextView
+                    style="@style/VerySmallText.colorGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:background="@drawable/rounded_corner_grey_bg"
+                    android:padding="@dimen/_3sdp"
+                    android:text="@string/description"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/SmallText.Black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/see_more_txt"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/reviews" />
+
+                    <TextView
+                        android:id="@+id/see_more_txt"
+                        style="@style/VerySmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:padding="@dimen/_8sdp"
+                        android:visibility="gone"
+                        android:text="@string/see_more"
+                        android:textColor="@color/colorPrimary" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/prvdr_detail_bottom_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="4dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProviderReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@+id/provider_detail_next_btn"
+                        android:adapter="@{providerReviewAdapter}"
+                        android:orientation="vertical"
+                        android:overScrollMode="never"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                    <TextView
+                        android:id="@+id/no_content_txt"
+                        style="@style/MediumText.colorBlack"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:layout_above="@+id/provider_detail_next_btn"
+                        android:background="@color/colorWhite"
+                        android:gravity="center"
+                        android:text="@string/no_reviews_available" />
+
+                    <Button
+                        android:id="@+id/provider_detail_next_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/SmallText.colorWhite"
+                        android:layout_alignParentBottom="true"
+                        android:padding="@dimen/_10sdp"
+                        android:background="@drawable/bg_round_corner_curved"
+                        android:onClick="@{()->providerDetailViewModel.onClickNext()}"
+                        android:text="@string/next"
+                        android:textColor="@color/colorWhite" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

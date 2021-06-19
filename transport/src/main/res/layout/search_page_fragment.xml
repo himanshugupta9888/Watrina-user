@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.fragment.searchpage.SearchPageViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:clickable="true"
+        android:focusable="true"
+        tools:context=".ui.fragment.searchpage.SearchPageFragment">
+
+        <RelativeLayout
+            android:id="@+id/rvLoading"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:onClick="@{() -> viewModel.moveToFlow()}"
+            android:layout_marginRight="@dimen/_10sdp">
+
+
+            <include layout="@layout/custom_fab_layout" />
+
+            <ImageView
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bg_rounded_search_provider" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btCancelRequest"
+            style="@style/MediumText.colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@color/colorTaxiPrimary"
+            android:padding="@dimen/_5sdp"
+            android:onClick="@{() -> viewModel.cancelRequest()}"
+            android:text="@string/cancel_request" />
+
+    </RelativeLayout>
+</layout>

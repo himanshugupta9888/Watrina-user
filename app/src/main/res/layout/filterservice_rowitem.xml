@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="itemClickListener"
+            type="com.gox.app.adapter.CustomClickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:onClick="@{()->itemClickListener.onListClickListner()}"
+        android:padding="@dimen/_4sdp">
+
+        <TextView
+            android:id="@+id/filterservice_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/font_normal"
+            android:gravity="center"
+            android:background="@drawable/custom_roundcorner_selected_type"
+            style="@style/BoldText"
+            android:padding="@dimen/_4sdp"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/dummy_transport_txt"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_11sdp" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <!-- <variable
+             name="orderfragmentviewmodel"
+             type="com.xjek.user.ui.order_fragment.OrderFragmentViewModel" />-->
+
+        <variable
+            name="addonsAdapter"
+            type="com.gox.foodiemodule.adapter.AddonsListAdapter" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background_color"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/resturant_image_cv"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/item_img"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dummy_foodi_banner" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/item_name_tv"
+                style="@style/SmallText.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@id/resturant_image_cv"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/dummy_title" />
+
+            <TextView
+                android:id="@+id/item_price_tv"
+                style="@style/VerySmallText.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item_name_tv"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_toEndOf="@id/resturant_image_cv"
+                android:padding="@dimen/_5sdp"
+                tools:text="$20"
+
+                />
+
+            <ImageView
+                android:id="@+id/close_dialog_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_cross"
+                android:tint="@color/foodie_red" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/addon_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:padding="@dimen/_8sdp">
+
+            <TextView
+                style="@style/SmallText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_ons" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dispute_reason_frghome_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adapter="@{addonsAdapter}"
+            android:padding="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:spanCount="3" />
+
+        <Button
+            android:id="@+id/apply_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_17sdp"
+            android:background="@drawable/addons_round_corner"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/done"
+            android:textAllCaps="false"
+            style="@style/SmallText"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_12sdp" />
+
+    </LinearLayout>
+
+</layout>

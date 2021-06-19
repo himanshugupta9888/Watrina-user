@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemClickListener"
+            type="com.gox.app.adapter.CustomClickListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:padding="@dimen/_5sdp"
+            app:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:id="@+id/currentorderitem_list_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> itemClickListener.onListClickListner()}">
+
+                <LinearLayout
+                    android:id="@+id/date_time_laoyut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xuber_bg_round_corner"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <TextView
+                        android:id="@+id/date_current_list_tv"
+                        style="@style/SmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/font_normal"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/time_current_list_tv"
+                        style="@style/SmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/font_normal"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        tools:text="3:30 PM"
+                        android:textColor="@color/colorTaxiWhite" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/title_current_list_tv"
+                    style="@style/SmallText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/date_time_laoyut"
+                    android:fontFamily="@font/font_normal"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/dummy_title_text"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
+
+                <TextView
+                    android:id="@+id/ordered_item_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/SmallText"
+                    android:layout_below="@id/title_current_list_tv"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/date_time_laoyut"
+                    android:fontFamily="@font/font_normal"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/dummy_src_type"
+                    android:textColor="@color/grey"
+                     />
+
+                <TextView
+                    android:id="@+id/track_current_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ordered_item_tv"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/date_time_laoyut"
+                    android:drawableStart="@drawable/ic_map"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableTint="@color/dark_grey"
+                    android:fontFamily="@font/font_normal"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/track"
+                    android:textColor="@color/dark_grey"
+                    style="@style/SmallText"
+                    tools:targetApi="m" />
+
+                <TextView
+                    android:id="@+id/call_current_list_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ordered_item_tv"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/track_current_tv"
+                    android:drawableLeft="@drawable/ic_foodie_call"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableTint="@color/dark_grey"
+                    android:fontFamily="@font/font_normal"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/call"
+                    android:textColor="@color/dark_grey"
+                    style="@style/SmallText"
+                    tools:ignore="RtlHardcoded"
+                    tools:targetApi="m" />
+
+                <Button
+                    android:id="@+id/status_past_tv"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/xuber_custom_round_corner"
+                    android:fontFamily="@font/font_normal"
+                    android:text="@string/cancelled"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/_8sdp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

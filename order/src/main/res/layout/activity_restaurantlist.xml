@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
+    app:ignore="NamespaceTypo">
+
+    <data>
+
+        <variable
+            name="resturantlistViewModel"
+            type="com.gox.foodiemodule.ui.restaurantlist_activity.RestaurantListViewModel" />
+
+        <variable
+            name="customViewpagerAdapter"
+            type="com.gox.foodiemodule.adapter.CustomPagerAdapter" />
+
+        <variable
+            name="resturantsListAdapter"
+            type="com.gox.foodiemodule.adapter.RestaurantListAdapter" />
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/foodie_app_bg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/home_toolbar"
+            layout="@layout/foodie_toolbar_layout" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/home_toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SmallText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:text="@string/offers"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:padding="@dimen/_5sdp">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/view_pager"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adapter="@{customViewpagerAdapter}"
+                        android:overScrollMode="never" />
+
+                    <com.rd.PageIndicatorView
+                        android:id="@+id/pageIndicatorView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="15dp"
+                        android:padding="5dp"
+                        attrs:piv_animationType="slide"
+                        attrs:piv_interactiveAnimation="true"
+                        attrs:piv_padding="15dp"
+                        attrs:piv_radius="5dp"
+                        attrs:piv_selectedColor="@color/foodie_red"
+                        attrs:piv_unselectedColor="@android:color/darker_gray"
+                        attrs:piv_viewPager="@id/view_pager" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/SmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/restaurants"
+                        android:textColor="@color/foodie_red"
+                        android:textSize="@dimen/_12sdp"
+                        app:ignore="RelativeOverlap" />
+
+
+                    <LinearLayout
+                        android:id="@+id/lnrCategoryFilter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/restaturant_type_spinner"
+                            style="@style/mySpinnerItemStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:entries="@array/restaturant_type"
+                            android:textSize="@dimen/_8sdp" />
+
+                        <ImageView
+                            android:id="@+id/ivDropDown"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_down_arrow"
+                            android:tint="@color/foodie_red"/>
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/resturantsListAdapter_frghome_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:nestedScrollingEnabled="false"
+                    android:adapter="@{resturantsListAdapter}"
+                    android:visibility="visible"
+                    attrs:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <RelativeLayout
+                    android:id="@+id/id_no_res_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/res_placeholder"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_restaturant_placeholder"/>
+
+                    <TextView
+                        android:id="@+id/no_resturant_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/res_placeholder"
+                        android:gravity="center_horizontal"
+                        style="@style/SmallText.Black"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/no_resturant_found" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:backgroundTint="@color/foodie_red"
+            android:src="@drawable/ic_foodie_filter"
+            app:elevation="3dp" />
+
+
+    </RelativeLayout>
+</layout>

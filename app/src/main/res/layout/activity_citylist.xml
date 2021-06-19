@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="cityListAdapter"
+            type="com.gox.app.adapter.CityListAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Editext for Search -->
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/outline_box_rectangle"
+            android:hint="@string/search_country"
+            android:inputType="textCapWords"
+            android:padding="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/country_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{cityListAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </LinearLayout>
+</layout>

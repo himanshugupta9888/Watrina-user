@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.activity.main.TaxiMainViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/pick_location_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorTaxiGreyLight"
+            app:cardCornerRadius="@dimen/_1sdp"
+            app:cardElevation="@dimen/_8sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/iv_location"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_taxi_pin" />
+
+                <TextView
+                    android:id="@+id/tvSource"
+                    style="@style/SmallText.colorGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/iv_location"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:gravity="center|start"
+                    android:maxLines="1"
+                    android:onClick="@{() -> viewModel.pickSourceLocation()}"
+                    android:text="@={viewModel.addressvalue}"
+                    android:textColor="@color/colorTaxiBlack" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/colorTaxiWhite"
+            app:cardCornerRadius="@dimen/_1sdp">
+
+            <RelativeLayout
+                android:id="@+id/llDropLocationContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:onClick="@{() -> viewModel.pickLocation()}"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/destination"
+                    style="@style/SmallText.Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:gravity="center"
+                    android:hint="@string/enter_drop_location"
+                    android:maxLines="1"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:text="@={viewModel.destinationaddressvalue}"
+                    android:textColor="@color/colorTaxiBlack" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

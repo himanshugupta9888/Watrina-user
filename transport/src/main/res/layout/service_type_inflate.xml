@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="listner"
+            type="com.gox.taximodule.ui.adapter.CustomClickListner" />
+
+        <variable
+            name="position"
+            type="int" />
+
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/lLHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+        <!--android:onClick="@{() -> listner.onListClickListner(position)}"-->
+
+        <TextView
+            android:id="@+id/tvServiceETA"
+            style="@style/VerySmallText.colorGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:gravity="center"
+            android:textColor="@color/dark_grey" />
+
+        <ImageView
+            android:id="@+id/ivServiceImage"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/demo_car" />
+
+        <TextView
+            android:id="@+id/tvServiceName"
+            style="@style/VerySmallText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/bg_round_inactive_medium_corner"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:gravity="center"
+            android:minWidth="@dimen/_50sdp"
+            android:padding="@dimen/_7sdp"
+            android:text="@string/service_name" />
+
+    </LinearLayout>
+</layout>

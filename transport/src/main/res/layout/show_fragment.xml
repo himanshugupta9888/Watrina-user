@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/MediumText.colorTaxiPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="@string/daily_ride" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:minHeight="@dimen/_40sdp"
+            android:orientation="horizontal" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_5sdp"
+            android:layerType="software"
+            android:src="@drawable/bg_dotted_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp">
+
+
+            <ImageView
+                android:id="@+id/ivPaymentType"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:contentDescription="@string/payment_type"
+                android:src="@drawable/ic_credit_card" />
+
+            <TextView
+                android:id="@+id/tvPaymentDetails"
+                style="@style/VerySmallText.colorGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_toEndOf="@+id/ivPaymentType"
+                tools:text="XXXX-XXXX-XXX-1234" />
+
+            <Button
+                android:id="@+id/btnChange"
+                style="@style/VerySmallText.colorTaxiPrimary"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/bg_taxi_change"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/change"
+                tools:ignore="UnusedAttribute" />
+
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btGetPricing"
+            style="@style/SmallText.colorWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@color/colorTaxiPrimary"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="@{()->viewModel.moveToConfirmPage()}"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/get_pricing"
+            tools:ignore="UnusedAttribute" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbarStyle">@style/CustomToolBarStyle</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="TextAppearanceSmall" parent="TextAppearance.AppCompat.Small">
+        <item name="android:fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="TextAppearanceNormal" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="TextAppearanceLarge" parent="TextAppearance.AppCompat.Large">
+        <item name="android:fontFamily">@font/font_bold</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="android:textAppearanceSmall">@style/TextAppearanceSmall</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearanceNormal</item>
+        <item name="android:textAppearanceLarge">@style/TextAppearanceLarge</item>
+    </style>
+
+    <style name="BottomNavigationTheme" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="Edittext_OutlinedTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="AppTheme.TextFloatLabelAppearance" parent="TextAppearance.Design.Hint">
+        <!-- Floating label appearance here -->
+        <item name="android:textColor">@color/dark_grey</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+    </style>
+
+    <style name="AppTheme.TextErrorAppearance" parent="TextAppearance.Design.Error">
+        <!-- Error message appearance here -->
+        <item name="android:textColor">#ff0000</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
+    <style name="CustomToolBarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="background">@android:color/white</item>
+        <item name="titleTextColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+        <item name="android:navigationIcon">@drawable/ic_left_arrow</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@style/Widget.AppCompat.Spinner">
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:background">@null</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+    </style>
+
+    <style name="SpinnerItem" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textAppearance">@style/TextAppearance.SpinnerItem</item>
+        <item name="android:textColor">@color/foodie_red</item>
+    </style>
+
+    <style name="TextAppearance.SpinnerItem" parent="@android:style/TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/foodie_red</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="BoldText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+        <item name="android:fontFamily">@font/font_bold</item>
+    </style>
+
+
+    <style name="MediumText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_14sdp</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="MediumText.Black" parent="MediumText">
+        <item name="android:textColor">@color/colorTaxiBlack</item>
+    </style>
+
+    <style name="MediumText.colorGrey" parent="MediumText">
+        <item name="android:textColor">@color/colorTaxiGrey2</item>
+    </style>
+
+    <style name="MediumText.colorBlack" parent="MediumText">
+        <item name="android:textColor">@color/colorTaxiBlack</item>
+    </style>
+
+    <style name="XuberCustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/XuberCustomBottomSheetStyle</item>
+    </style>
+
+    <style name="MediumText.colorWhite" parent="MediumText">
+        <item name="android:textColor">@color/colorTaxiWhite</item>
+    </style>
+
+    <style name="MediumText.colorTaxiPrimary" parent="MediumText">
+        <item name="android:textColor">@color/colorTaxiPrimary</item>
+    </style>
+
+    <style name="SmallText" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="LightText" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_11sdp</item>
+        <item name="android:fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="SmallText.Black" parent="SmallText">
+        <item name="android:textColor">@color/colorTaxiBlack</item>
+        <item name="android:fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="SmallText.colorGrey" parent="SmallText">
+        <item name="android:textColor">@color/colorTaxiGrey2</item>
+        <item name="android:fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="SmallText.colorTaxiGrey" parent="SmallText">
+        <item name="android:textColor">@color/colorTaxiGrey</item>
+        <item name="android:fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="SmallText.colorWhite" parent="SmallText">
+        <item name="android:textColor">@color/colorTaxiWhite</item>
+        <item name="android:fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="SmallText.colorTaxiPrimary" parent="SmallText">
+        <item name="android:textColor">@color/colorTaxiPrimary</item>
+        <item name="android:fontFamily">@font/font_light</item>
+    </style>
+
+    <style name="VerySmallText" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_10sdp</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="VerySmallText.Black" parent="VerySmallText">
+        <item name="android:textColor">@color/colorTaxiBlack</item>
+    </style>
+
+    <style name="VerySmallText.colorGrey" parent="VerySmallText">
+        <item name="android:textColor">@color/colorTaxiGrey2</item>
+    </style>
+
+    <style name="VerySmallText.colorTaxiPrimary" parent="VerySmallText">
+        <item name="android:textColor">@color/colorTaxiPrimary</item>
+    </style>
+
+    <style name="VerySmallText.colorTaxiWhite" parent="VerySmallText">
+        <item name="android:textColor">@color/colorTaxiWhite</item>
+    </style>
+
+
+    <style name="ExtraSmallText" parent="@android:style/TextAppearance.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+
+    <style name="ExtraSmallText.Black" parent="ExtraSmallText">
+        <item name="android:textColor">@color/colorTaxiBlack</item>
+    </style>
+
+    <style name="ExtraSmallText.colorGrey" parent="ExtraSmallText">
+        <item name="android:textColor">@color/colorTaxiGrey2</item>
+    </style>
+
+    <style name="ExtraSmallText.colorTaxiPrimary" parent="ExtraSmallText">
+        <item name="android:textColor">@color/colorTaxiPrimary</item>
+    </style>
+
+    <style name="ExtraSmallText.colorTaxiWhite" parent="ExtraSmallText">
+        <item name="android:textColor">@color/colorTaxiWhite</item>
+    </style>
+
+
+    <style name="TaxiRatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/grey_font</item>
+        <item name="colorControlActivated">@color/colorTaxiPrimary</item>
+    </style>
+
+
+    <!--Base Module-->
+
+    <style name="TabLayoutStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="TabLayoutWallet" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="selectedTabButton" parent="@style/Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+        <item name="android:background">@drawable/custom_roundcorner_button</item>
+    </style>
+
+    <style name="unSelectedTabButton" parent="@style/Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorTaxiBlack</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+        <item name="android:background">@drawable/custom_roundcorner_unselectedorder</item>
+    </style>
+
+
+    <!--TransportModule-->
+
+    <style name="CustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+    <style name="XuberCustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/grey_font</item>
+        <item name="colorControlActivated">@color/colorXuberPrimary</item>
+    </style>
+
+    <style name="FoodieRatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/grey_font</item>
+        <item name="colorControlActivated">@color/foodie_red</item>
+    </style>
+
+
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowIsFloating">false</item>
+
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/colorWhite</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+        <item name="android:windowEnterAnimation">@anim/xuber_slide_up</item>
+        <item name="android:windowExitAnimation">@anim/xuber_slide_down</item>
+    </style>
+
+
+    <!--OrderModule-->
+
+    <style name="OrderCustomBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/XuberCustomBottomSheetStyle</item>
+    </style>
+
+    <style name="OrderRatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/grey_font</item>
+        <item name="colorControlActivated">@color/foodie_red</item>
+    </style>
+
+
+    <!-- transport alert dialog -->
+    <style name="TransportThemeDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:colorBackground">@color/colorWhite</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColor">@color/colorTaxiPrimary</item>
+        <item name="colorAccent">@color/colorTaxiPrimary</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+    </style>
+    <!-- transport Radio style -->
+    <style name="transportThemeStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:colorControlNormal">@color/colorTaxiGrey</item>
+        <item name="android:colorControlActivated">@color/colorTaxiPrimary</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorTaxiGrey2</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+    </style>
+
+    <!-- transport calender alert dialog -->
+    <style name="TransportCalenderThemeDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorTaxiPrimary</item>
+        <item name="colorControlActivated">@color/colorTaxiPrimary</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+    </style>
+
+
+    <!-- foodie Radio style -->
+    <style name="foodieThemeStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:colorControlNormal">@color/colorTaxiGrey</item>
+        <item name="android:colorControlActivated">@color/foodie_red</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/colorTaxiGrey2</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
+        <item name="android:fontFamily">@font/font_normal</item>
+    </style>
+
+</resources>

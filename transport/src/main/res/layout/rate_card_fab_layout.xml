@@ -1,0 +1,28 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Other components and views -->
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        style="@style/Widget.MaterialComponents.BottomAppBar"
+        app:fabAlignmentMode="center" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabTaxiImage"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:src="@drawable/demo_car"
+        android:scaleType="center"
+        app:backgroundTint="@color/colorTaxiWhite"
+        app:fabSize="normal"
+        app:maxImageSize="@dimen/_40sdp"
+        app:fabCustomSize="@dimen/_50sdp"
+        app:layout_anchor="@id/bottomAppBar" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

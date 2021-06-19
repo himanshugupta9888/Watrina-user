@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="orderfragmentviewmodel"
+            type="com.gox.app.ui.order_fragment.OrderFragmentViewModel" />
+
+        <variable
+            name="filterServiceListAdapter"
+            type="com.gox.app.adapter.FilterServiceListAdapter" />
+
+        <variable
+            name="currrentOrdersAdapter"
+            type="com.gox.app.adapter.CurrentOrdersAdapter" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_background_color"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/profile_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:elevation="4dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/MediumText.Black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_history" />
+
+                    <TextView
+                        android:id="@+id/service_name_toolbar_tv"
+                        style="@style/SmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/transport" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/pastorder_btn"
+                        style="@style/unSelectedTabButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:onClick="@{() -> orderfragmentviewmodel.moveToPastOrderList()}"
+                        android:text="@string/past"
+                        android:textAllCaps="false" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/current_order_btn"
+                        style="@style/unSelectedTabButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:onClick="@{() -> orderfragmentviewmodel.moveToCurrentOrderList()}"
+                        android:text="@string/current"
+                        android:textAllCaps="false" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/upcoming_order_btn"
+                        style="@style/unSelectedTabButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:onClick="@{() -> orderfragmentviewmodel.moveToUpcomingOrderList()}"
+                        android:text="@string/upcoming"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <FrameLayout
+                        android:id="@+id/container_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:layout_marginBottom="@dimen/_30sdp"
+                        android:onClick="@{() -> orderfragmentviewmodel.showFilter()}"
+                        android:src="@drawable/ic_filter"
+                        android:tint="@color/colorPrimary"
+                        app:backgroundTint="@color/colorTaxiWhite" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFeaturedService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@color/app_background_color"
+        android:orientation="vertical"
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:id="@+id/recommended_service_banner_img"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="@string/app_name"
+                android:layout_margin="@dimen/_15sdp"
+                android:src="@drawable/feature_service_1"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/SmallText.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_alignParentTop="true"
+                tools:text="Gox Ride"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                style="@style/SmallText.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginEnd="@dimen/_90sdp"
+                android:layout_below="@+id/tvTitle"
+                tools:text="@string/walk_1_description"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGo"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="@dimen/_30sdp"
+                style="@style/SmallText.Black"
+                android:textSize="@dimen/_12sdp"
+                android:stateListAnimator="@null"
+                android:textColor="@color/colorWhite"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_below="@+id/tvDescription"
+                tools:text="GO RIDE"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

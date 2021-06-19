@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="notificationviewmodel"
+            type="com.gox.app.ui.notification_fragment.NotificationFragmentViewModel" />
+
+        <variable
+            name="notificationAdapter"
+            type="com.gox.app.adapter.NotificationAdapter" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_color"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/notification_toolbar"
+            style="@style/CustomToolBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_white"
+            android:elevation="4dp"
+            app:title="@string/title_notification"
+            app:titleTextAppearance="@style/MediumText"
+            tools:targetApi="honeycomb" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notification_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:adapter="@{notificationAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <LinearLayout
+            android:id="@+id/empty_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_no_history" />
+
+            <TextView
+                style="@style/SmallText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/you_have_no_notificaion"
+                android:textColor="@color/darkgrey" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_layout"
+            layout="@layout/toolbar_service_category" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbr_providerlist"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:titleTextAppearance="@style/MediumText"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tb_providerlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:tabBackground="@color/colorWhite"
+                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabTextAppearance="@style/TabLayoutStyle"
+                app:tabTextColor="@color/black" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.gox.basemodule.common.payment.utils.NonSwipeableViewPager
+            android:id="@+id/vb_serviceprovider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:visibility="visible" />
+    </LinearLayout>
+</layout>

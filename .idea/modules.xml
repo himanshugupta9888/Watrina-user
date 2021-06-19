@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appoets-watrina_android_user-e40eb6973a4d.iml" filepath="$PROJECT_DIR$/.idea/modules/appoets-watrina_android_user-e40eb6973a4d.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/appoets-watrina_android_user-e40eb6973a4d.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/appoets-watrina_android_user-e40eb6973a4d.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base/appoets-watrina_android_user-e40eb6973a4d.base.iml" filepath="$PROJECT_DIR$/.idea/modules/base/appoets-watrina_android_user-e40eb6973a4d.base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/monitorinternet/appoets-watrina_android_user-e40eb6973a4d.monitorinternet.iml" filepath="$PROJECT_DIR$/.idea/modules/monitorinternet/appoets-watrina_android_user-e40eb6973a4d.monitorinternet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/order/appoets-watrina_android_user-e40eb6973a4d.order.iml" filepath="$PROJECT_DIR$/.idea/modules/order/appoets-watrina_android_user-e40eb6973a4d.order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/appoets-watrina_android_user-e40eb6973a4d.service.iml" filepath="$PROJECT_DIR$/.idea/modules/service/appoets-watrina_android_user-e40eb6973a4d.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/transport/appoets-watrina_android_user-e40eb6973a4d.transport.iml" filepath="$PROJECT_DIR$/.idea/modules/transport/appoets-watrina_android_user-e40eb6973a4d.transport.iml" />
+    </modules>
+  </component>
+</project>

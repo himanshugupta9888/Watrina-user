@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:text="@string/send_amount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:text="@string/amount"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp" />
+
+
+            <com.gox.basemodule.utils.PrefixCustomEditText
+                android:id="@+id/edtAmount"
+                style="@style/SmallText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_label"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/bg_extra_charge"
+                android:inputType="number"
+                android:maxWidth="@dimen/_150sdp"
+                android:minWidth="@dimen/_120sdp"
+                android:minHeight="@dimen/_35sdp"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:textSize="@dimen/_9sdp" />
+
+
+            <Button
+                android:id="@+id/bt_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/green_continue"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:padding="@dimen/_5sdp"
+                android:singleLine="true"
+                android:text="@string/send"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/green_continue" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <data>
+
+    </data>
+
+</layout>

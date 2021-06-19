@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewCouponViewModel"
+            type="com.gox.app.ui.viewCouponActivity.ViewCouponViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/coupon_toolbar"
+            layout="@layout/toolbar_layout" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_165sdp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_25sdp"
+            android:background="@drawable/couponview_bg"
+            android:src="@drawable/bg_white">
+
+            <TextView
+                android:id="@+id/coupon_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/font_normal"
+                android:text="@string/dummy_couponcode"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_25sdp" />
+
+            <TextView
+                android:id="@+id/coupon_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coupon_code"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/font_normal"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/dummy_couponcode"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/coupon_expire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coupon_desc"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:fontFamily="@font/font_normal"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/dummy_couponcode"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/_10sdp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>

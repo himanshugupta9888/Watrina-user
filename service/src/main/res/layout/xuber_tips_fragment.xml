@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <!--  <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorWhite"
+          android:orientation="vertical">
+
+          <TextView
+              android:id="@+id/tvLabelTips"
+              style="@style/MediumText.Black"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:text="@string/taxi_tips" />
+
+          <RelativeLayout
+              android:id="@+id/tick_mark_labels_rl"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              tools:context=".ui.fragment.tips.TipsFragment">
+
+              &lt;!&ndash; <FrameLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_below="@+id/tvLabelTips"
+                   android:layout_marginTop="@dimen/_10sdp"
+                   android:padding="@dimen/_30sdp">
+               </FrameLayout>  &ndash;&gt;
+
+              <RadioGroup
+                  android:id="@+id/tips_range_group"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="30dp"
+                  android:orientation="horizontal"
+                  android:visibility="visible">
+
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:button="@null"
+                      android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                      android:gravity="center"
+                      android:text="0" />
+
+                  <RadioButton
+                      android:id="@+id/rbTips"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:button="@null"
+                      android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                      android:gravity="center"
+                      android:text="2" />
+
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:button="@null"
+                      android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                      android:gravity="center"
+                      android:text="4" />
+
+                  <RadioButton
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_weight="1"
+                      android:button="@null"
+                      android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                      android:gravity="center"
+                      android:text="other" />
+              </RadioGroup>
+              &lt;!&ndash;   <com.anton46.stepsview.StepsView
+                     android:id="@+id/stepsView"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content" />&ndash;&gt;
+
+              <androidx.cardview.widget.CardView
+                  android:id="@+id/cvtips"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/tips_range_group"
+                  android:layout_centerHorizontal="true"
+                  android:layout_marginTop="@dimen/_15sdp"
+                  android:elevation="@dimen/_2sdp"
+                  app:cardBackgroundColor="@color/colorTaxiGreyLight">
+
+                  <androidx.appcompat.widget.AppCompatEditText
+                      android:id="@+id/ettips"
+                      style="@style/SmallText.colorGrey"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginStart="@dimen/_15sdp"
+                      android:layout_marginEnd="@dimen/_15sdp"
+                      android:background="@android:color/transparent"
+                      android:gravity="center|start"
+                      android:hint="@string/tips_amount_label"
+                      android:inputType="text"
+                      android:minHeight="@dimen/_35sdp"
+                      android:paddingStart="@dimen/_15sdp"
+                      android:paddingEnd="@dimen/_15sdp"
+                      android:visibility="gone" />
+              </androidx.cardview.widget.CardView>
+
+              <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/tvTips"
+                  style="@style/SmallText.colorTaxiPrimary"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/cvtips"
+                  android:layout_alignParentEnd="true"
+                  android:layout_marginTop="@dimen/_15sdp"
+                  android:layout_marginBottom="@dimen/_15sdp"
+                  android:background="?attr/selectableItemBackground"
+                  android:clickable="true"
+                  android:focusable="true"
+                  android:gravity="center"
+                  android:padding="@dimen/_5sdp"
+                  android:text="@string/tips_add" />
+          </RelativeLayout>
+      </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvLabelTips"
+            style="@style/MediumText.colorBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/xuber_tips" />
+
+        <RelativeLayout
+            android:id="@+id/tick_mark_labels_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.fragment.tips.TipsFragment">
+            <!-- <FrameLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/tvLabelTips"
+                 android:layout_marginTop="@dimen/_10sdp"
+                 android:padding="@dimen/_30sdp">
+             </FrameLayout>  -->
+            <!--
+                        <RadioGroup
+                            android:id="@+id/tips_range_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:orientation="horizontal">
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@null"
+                                android:drawableBottom="@android:drawable/btn_radio"
+                                android:gravity="center"
+                                android:text="$0" />
+                            <view
+                                android:layout_width="wrap_content"
+                                android:layout_height="1dp"
+                                android:background="@color/red" />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@null"
+                                android:drawableBottom="@android:drawable/btn_radio"
+                                android:gravity="center"
+                                android:text="$2" />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@null"
+                                android:drawableBottom="@android:drawable/btn_radio"
+                                android:gravity="center"
+                                android:text="$4" />
+                            <RadioButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:button="@null"
+                                android:drawableBottom="@android:drawable/btn_radio"
+                                android:gravity="center"
+                                android:text="$other" />
+                        </RadioGroup>
+            -->
+            <!--   <com.anton46.stepsview.StepsView
+                   android:id="@+id/stepsView"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content" />-->
+
+            <LinearLayout
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="7">
+
+                <RadioButton
+                    android:id="@+id/rb_zero"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableBottom="@android:drawable/btn_radio"
+                    android:gravity="center"
+                    tools:text="0" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="-35dp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:background="@color/grey_font" />
+
+                <RadioButton
+                    android:id="@+id/rb_two"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-35dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableBottom="@android:drawable/btn_radio"
+                    android:gravity="center"
+                    tools:text="2" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="-35dp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:background="@color/grey_font" />
+
+                <RadioButton
+                    android:id="@+id/rb_four"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-35dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableBottom="@android:drawable/btn_radio"
+                    android:gravity="center"
+                    tools:text="4" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="-35dp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:background="@color/grey_font" />
+
+                <RadioButton
+                    android:id="@+id/rb_other"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-35dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableBottom="@android:drawable/btn_radio"
+                    android:gravity="center"
+                    android:text="@string/other" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvtips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radio_group"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:elevation="@dimen/_2sdp"
+                app:cardBackgroundColor="@color/grey">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ettips"
+                    style="@style/VerySmallText.colorGrey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@android:color/transparent"
+                    android:gravity="center|start"
+                    android:hint="@string/xuber_tips_amount_label"
+                    android:inputType="text"
+                    android:minHeight="@dimen/_35sdp"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:visibility="gone" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAddTips"
+                style="@style/SmallText.colorTaxiPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cvtips"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:inputType="number"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/tips_add" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

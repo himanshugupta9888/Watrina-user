@@ -1,0 +1,30 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="ProviderReviewViewModel"
+            type="com.gox.xubermodule.ui.activity.providerreviews.ProviderReviewViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_color">
+
+        <include
+            android:id="@+id/subservice_toolbar"
+            layout="@layout/toolbar_service_category" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/review_list_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/subservice_toolbar"
+            android:layout_margin="@dimen/_12sdp"
+            android:background="@color/colorWhite"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </RelativeLayout>
+</layout>

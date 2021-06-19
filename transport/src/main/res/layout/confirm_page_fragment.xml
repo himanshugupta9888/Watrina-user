@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.fragment.confirmpage.ConfirmPageViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTaxiGrey1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/toolbar_confirm"
+                layout="@layout/toolbar_confim_page"
+                app:viewModel="@{viewModel}" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="@string/select_date_and_time"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp"
+                    android:visibility="gone" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/colorTaxiWhite"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp">
+
+                        <TextView
+                            android:id="@+id/tvEstimatedFare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:maxWidth="@dimen/_150sdp"
+                            android:text="@string/estimated_fare"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp" />
+
+                        <TextView
+                            android:id="@+id/tvEstimatedFarePrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp"
+                            tools:ignore="RelativeOverlap"
+                            tools:text="$100" />
+
+                        <TextView
+                            android:id="@+id/tvEta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvEstimatedFare"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:maxWidth="@dimen/_150sdp"
+                            android:text="@string/eta"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp" />
+
+                        <TextView
+                            android:id="@+id/tvEtaMins"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvEstimatedFarePrice"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp"
+                            tools:text="15mins" />
+
+                        <TextView
+                            android:id="@+id/tvModel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvEta"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:maxWidth="@dimen/_150sdp"
+                            android:text="@string/model"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp" />
+
+                        <TextView
+                            android:id="@+id/tv_vehicle_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvEtaMins"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp"
+                            tools:text="HatchBack" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/colorTaxiWhite"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:id="@+id/endorsment_container_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="0dp"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tvWheelChair"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/avenirltstd_medium"
+                                android:text="@string/wheel_chair"
+                                android:textColor="@color/colorTaxiGrey2"
+                                android:textSize="@dimen/_13sdp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgWheelChair"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:orientation="horizontal"
+                                android:theme="@style/transportThemeStyle"
+                                tools:ignore="RelativeOverlap">
+
+                                <RadioButton
+                                    android:id="@+id/wheelchair_yes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:button="@null"
+                                    android:drawableEnd="?android:attr/listChoiceIndicatorSingle"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/yes"
+                                    android:textAlignment="textStart" />
+
+                                <RadioButton
+                                    android:id="@+id/wheelchair_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:button="@null"
+                                    android:drawableEnd="?android:attr/listChoiceIndicatorSingle"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/no"
+                                    android:textAlignment="textStart" />
+
+                            </RadioGroup>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tvChildSheet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/avenirltstd_medium"
+                                android:text="@string/child_sheet"
+                                android:textColor="@color/colorTaxiGrey2"
+                                android:textSize="@dimen/_13sdp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgChildSheet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:fontFamily="@font/avenirltstd_medium"
+                                android:orientation="horizontal"
+                                android:theme="@style/transportThemeStyle"
+                                tools:ignore="RelativeOverlap">
+
+                                <RadioButton
+                                    android:id="@+id/childseat_yes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_10sdp"
+                                    android:button="@null"
+                                    android:drawableEnd="?android:attr/listChoiceIndicatorSingle"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/yes"
+                                    android:textAlignment="textStart" />
+
+                                <RadioButton
+                                    android:id="@+id/childseat_no"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:button="@null"
+                                    android:drawableEnd="?android:attr/listChoiceIndicatorSingle"
+                                    android:fontFamily="@font/avenirltstd_medium"
+                                    android:text="@string/no"
+                                    android:textAlignment="textStart" />
+
+                            </RadioGroup>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/colorTaxiWhite"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_10sdp">
+
+                        <CheckBox
+                            android:id="@+id/cbBookSomeOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:onClick="@{()->viewModel.openBookSomeOneUI()}"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:text="@string/booked_for_someone"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp"
+                            android:theme="@style/transportThemeStyle" />
+
+                        <Button
+                            android:id="@+id/btnEdit"
+                            android:layout_width="@dimen/_60sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/bg_taxi_change"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:onClick="@{()->viewModel.openBookSomeOneUI()}"
+                            android:text="@string/edit"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp"
+                            android:visibility="gone"
+                            tools:ignore="UnusedAttribute" />
+
+                        <CheckBox
+                            android:id="@+id/cbUseWalletAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cbBookSomeOne"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:text="@string/use_wallet_amount"
+                            android:textColor="@color/colorTaxiGrey2"
+                            android:textSize="@dimen/_13sdp"
+                            android:theme="@style/transportThemeStyle" />
+
+                        <TextView
+                            android:id="@+id/tv_wallet_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cbBookSomeOne"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cbUseWalletAmount"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:elevation="0dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvCoupon"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/avenirltstd_medium"
+                                android:gravity="center|start"
+                                android:text="@string/coupon"
+                                android:textColor="@color/colorTaxiGrey2"
+                                android:textSize="@dimen/_13sdp" />
+
+                            <TextView
+                                android:id="@+id/tvViewCoupon"
+                                style="@style/VerySmallText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|end"
+                                android:fontFamily="@font/avenirltstd_medium"
+                                android:gravity="center"
+                                android:onClick="@{() -> viewModel.viewCoupons()}"
+                                android:text="@string/view_coupon"
+                                android:textColor="@color/colorTaxiPrimary" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/schedule_date_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/colorTaxiWhite"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/schedule_date_time"
+                            style="@style/MediumText.colorGrey"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:textSize="14sp" />
+
+                        <ImageView
+                            android:id="@+id/delete_schedule"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:background="@color/colorTaxiGrey1"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_delete" />
+
+                        <ImageView
+                            android:id="@+id/edit_schedule"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:layout_toStartOf="@+id/delete_schedule"
+                            android:background="@color/colorTaxiGrey1"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_edit_icon" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/colorTaxiWhite"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <FrameLayout
+                        android:id="@+id/peak_hours_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_dotted_rectangle"
+                        android:padding="@dimen/_10sdp"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/SmallText.colorGrey"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:background="@color/colorTaxiGrey1"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:gravity="center"
+                            android:text="@string/due_to_high_demand_price_may_vary" />
+
+                        <TextView
+                            android:id="@+id/peak_hours_percentage"
+                            style="@style/SmallText.colorWhite"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_gravity="center|start"
+                            android:background="@drawable/bg_rounded_peak_charge"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:gravity="center"
+                            android:padding="@dimen/_2sdp"
+                            android:text="@string/taxi_demand_1_1x" />
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSchedule"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_round_medium_corner"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:onClick="@{() -> viewModel.openScheduleUI()}"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/schedule_now"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_13sdp"
+                        tools:ignore="UnusedAttribute" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_2sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_round_medium_corner"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:onClick="@{()->viewModel.searchProviders()}"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/ride_now"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/_13sdp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

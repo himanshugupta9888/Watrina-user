@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="categoryAdapter"
+            type="com.gox.xubermodule.ui.adapter.XuberServiceCategoryAdapter" />
+
+        <variable
+            name="xuberSubCategoryviewmodel"
+            type="com.gox.xubermodule.ui.activity.mainactivity.XuberMainModel"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/app_background_color"
+        tools:context=".ui.activity.mainactivity.XuberMainActivity">
+
+        <include layout="@layout/toolbar_service_category" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@color/colorWhite"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_5sdp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvXuberServiceCategory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:adapter="@{categoryAdapter}"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/empty_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_xuber_no_history" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/no_services_found"
+                android:textColor="@color/dark_grey" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

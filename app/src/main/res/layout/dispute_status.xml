@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_background_color"
+        android:orientation="vertical"
+        android:padding="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/usr_picture"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_profile_place_holder"
+                app:civ_border_color="@android:color/white"
+                app:civ_border_width="4dp" />
+
+            <TextView
+                android:id="@+id/user_dispute_title"
+                style="@style/MediumText.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/usr_picture"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/dispute" />
+
+            <TextView
+                android:id="@+id/user_dispute_status"
+                style="@style/MediumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="center"
+                android:background="@drawable/custom_roundcorner_selected_type"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/dummy_accepted"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/user_dispute_comment"
+                style="@style/SmallText.colorGrey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_below="@+id/user_dispute_title"
+                android:layout_toEndOf="@+id/usr_picture"
+                android:padding="@dimen/_5sdp"
+                tools:text="SSSS ssjshjhshjjj"
+                android:textSize="@dimen/_10sdp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/provider_dispute_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_8sdp"
+            android:visibility="gone">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/provider_picture"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_profile_place_holder"
+                app:civ_border_color="@android:color/white"
+                app:civ_border_width="4dp" />
+
+            <TextView
+                android:id="@+id/provider_dispute_title"
+                style="@style/MediumText.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_toStartOf="@+id/provider_picture"
+                android:padding="@dimen/_5sdp"
+                android:right="@dimen/_5sdp"
+                android:text="@string/dispute" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/provider_dispute_title"
+                android:layout_toStartOf="@+id/provider_picture"
+                android:orientation="horizontal"
+                android:padding="@dimen/_2sdp"
+                android:weightSum="2">
+
+
+                <!--<TextView
+                    android:id="@+id/dispute_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/custom_roundcorner_selectedorder"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/dummy_accepted"
+                    android:textColor="@color/colorAccent" />-->
+
+                <TextView
+                    android:id="@+id/dispute_comment"
+                    style="@style/SmallText.colorGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:gravity="right"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/dummy_dispute_created_comments" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

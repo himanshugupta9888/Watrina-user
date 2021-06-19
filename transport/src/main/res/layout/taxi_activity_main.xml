@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.activity.main.TaxiMainViewModel" />
+
+        <variable
+            name="serviceAdapter"
+            type="com.gox.taximodule.ui.adapter.ServiceTypesAdapter" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.main.TaxiMainActivity">
+
+        <include
+            android:id="@+id/content_main"
+            layout="@layout/content_main" />
+
+        <!--Normal Top-->
+        <LinearLayout
+            android:id="@+id/llLocationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_margin="@dimen/_5sdp"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> viewModel.goBack()}"
+                android:padding="5dp"
+                android:tint="@color/colorTaxiBlack"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ic_back" />
+
+            <include
+                layout="@layout/pick_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                bind:viewModel="@{viewModel}" />
+
+        </LinearLayout>
+
+        <!--Status Flow Top-->
+        <LinearLayout
+            android:id="@+id/llStatusFlowTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivBackFlow"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:contentDescription="@string/back"
+                android:onClick="@{() -> viewModel.goBack()}"
+                android:src="@drawable/ic_rounded_back"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/status_card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_margin="@dimen/_10sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/colorTaxiWhite"
+                app:cardElevation="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_dotted_rectangle">
+
+                    <LinearLayout
+                        android:id="@+id/status_flow_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <TextView
+                            android:id="@+id/tv_location_change"
+                            style="@style/SmallText.colorTaxiGrey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:gravity="center"
+                            android:minHeight="@dimen/_36sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/location_text"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/grey_font" />
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            style="@style/SmallText.Black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:gravity="center"
+                            android:minHeight="@dimen/_36sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/taxi_status"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/status_flow_header"
+                        android:background="@color/grey_font" />
+
+                    <RelativeLayout
+                        android:id="@+id/location_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/destination_address"
+                            style="@style/VerySmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_margin="@dimen/_3sdp"
+                            android:layout_toStartOf="@+id/edit_destination_trip"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:padding="@dimen/_6sdp" />
+
+                        <ImageView
+                            android:id="@+id/edit_destination_trip"
+                            android:layout_width="@dimen/_23sdp"
+                            android:layout_height="@dimen/_23sdp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:contentDescription="@string/app_name"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_edit_icon"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/status_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="vertical"
+                        android:paddingStart="@dimen/_20sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:visibility="visible">
+
+                        <View
+                            android:id="@+id/viewStatusDot"
+                            android:layout_width="@dimen/_4sdp"
+                            android:layout_height="@dimen/_4sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/dot_circle" />
+
+                        <TextView
+                            android:id="@+id/tvCurrentDriverStatus"
+                            style="@style/VerySmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignStart="@+id/tvTaxiStatusNotes"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_toEndOf="@+id/viewStatusDot"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:textColor="@color/colorTaxiPrimary"
+                            tools:text="Dbgjgbj k rgkgkbj k" />
+
+                        <TextView
+                            android:id="@+id/tvTaxiStatusNotes"
+                            style="@style/VerySmallText.Black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvCurrentDriverStatus"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_toEndOf="@+id/viewStatusDot"
+                            android:fontFamily="@font/avenirltstd_medium"
+                            android:text="@string/taxi_due_to_peak_hours_charges_are_based_on_providers_navailability" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+        <!-- Search VIew-->
+        <RelativeLayout
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rvLoading"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_marginTop="@dimen/_100sdp">
+
+                <include layout="@layout/custom_fab_layout" />
+
+                <ImageView
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/bg_rounded_search_provider" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btsearchCancelRequest"
+                style="@style/MediumText.colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/taxi_round_corner_button"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/cancel_request" />
+
+        </RelativeLayout>
+        <!--- Rating View !-->
+        <RelativeLayout
+            android:id="@+id/rating_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@color/colorTaxiGreyLight"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_label_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:text="@string/rating"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp" />
+
+            <LinearLayout
+                android:id="@+id/ll_user_name"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_label_rating"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/bg_half_circle_rectangle"
+                android:elevation="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/rating_provider_civ"
+                    android:layout_width="@dimen/_53sdp"
+                    android:layout_height="@dimen/_53sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/semi_white"
+                    android:padding="@dimen/_3sdp"
+                    android:src="@drawable/ic_profile_place_holder" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/colorTaxiGreyLight"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_rating_user_name"
+                        style="@style/SmallText.colorGrey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:textColor="@color/colorTaxiBlack"
+                        tools:text="John Wilson" />
+
+                    <TextView
+                        android:id="@+id/rate_card_driver_ratingtv"
+                        style="@style/SmallText.colorTaxiPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/ic_taxi_star_rated"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:gravity="center"
+                        tools:text="4.5" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_rating_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_user_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:text="@string/taxi_rating_rate_your_driver"
+                android:textColor="@color/colorTaxiBlack"
+                android:textSize="@dimen/_15sdp" />
+
+            <RatingBar
+                android:id="@+id/rv_user"
+                style="@android:style/Widget.Material.Light.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_rating_label"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/_15sdp"
+                android:numStars="5"
+                android:stepSize="1"
+                android:theme="@style/RatingBar" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_rating_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rv_user"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_15sdp">
+
+                <EditText
+                    android:id="@+id/comment_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:gravity="start|top"
+                    android:hint="@string/taxi_leave_your_comments"
+                    android:inputType="text"
+                    android:minHeight="@dimen/_80sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:textSize="@dimen/_13sdp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_rating_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cv_rating_comments"
+                android:layout_margin="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@color/colorTaxiPrimary"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:gravity="center"
+                android:padding="@dimen/_15sdp"
+                android:text="@string/taxi_rating_submit"
+                android:textColor="@color/colorTaxiWhite"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <!--Status Flow Bottom-->
+        <LinearLayout
+            android:id="@+id/llStatusFlowBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/fab_taxi_menu"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:menu_colorNormal="@color/colorTaxiWhite"
+                app:menu_colorPressed="@color/colorTaxiWhite"
+                app:menu_colorRipple="@color/colorTaxiWhite"
+                app:menu_fab_size="mini"
+                app:menu_icon="@drawable/ic_taxi_three_dots_more_indicator"
+                app:menu_openDirection="up"
+                app:menu_showShadow="true">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_taxi_menu_call"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:padding="@dimen/_12sdp"
+                    android:src="@drawable/ic_taxi_call_answer"
+                    app:fab_colorNormal="@color/colorTaxiPrimary"
+                    app:fab_colorPressed="@color/colorTaxiPrimary"
+                    app:fab_colorRipple="@color/colorTaxiPrimary"
+                    app:fab_label=""
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_taxi_menu_chat"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:padding="@dimen/_12sdp"
+                    android:src="@drawable/ic_taxi_chat"
+                    app:fab_colorNormal="@color/colorTaxiPrimary"
+                    app:fab_colorPressed="@color/colorTaxiPrimary"
+                    app:fab_colorRipple="@color/colorTaxiPrimary"
+                    app:fab_label=""
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab_taxi_menu_video"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:padding="@dimen/_12sdp"
+                    android:src="@drawable/ic_taxi_video_camera"
+                    android:visibility="gone"
+                    app:fab_colorNormal="@color/colorTaxiPrimary"
+                    app:fab_colorPressed="@color/colorTaxiPrimary"
+                    app:fab_colorRipple="@color/colorTaxiPrimary"
+                    app:fab_label=""
+                    app:fab_size="mini" />
+
+            </com.github.clans.fab.FloatingActionMenu>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|bottom"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvOTP"
+                        style="@style/VerySmallText.Black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_dotted_black_rectangle"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:padding="@dimen/_10sdp"
+                        android:visibility="@{viewModel.onRide ? View.VISIBLE:View.GONE}" />
+
+                    <TextView
+                        android:id="@+id/tvSos"
+                        style="@style/MediumText"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_black_circle"
+                        android:gravity="center"
+                        android:text="@string/taxi_sos"
+                        android:textColor="@color/colorTaxiPrimary"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fabCurrentLocation"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_gravity="center|end"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:onClick="@{()-> viewModel.showCurrentLocation()}"
+                        android:src="@drawable/ic_taxi_my_location"
+                        android:visibility="visible"
+                        app:backgroundTint="@color/colorTaxiWhite"
+                        app:borderWidth="0dp"
+                        app:fabCustomSize="@dimen/_30sdp"
+                        app:fabSize="normal" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/colorTaxiWhite"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/civ_driver_profile"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:src="@drawable/ic_profile_place_holder"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDriverName"
+                        style="@style/MediumText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:maxLines="1"
+                        android:text="@={viewModel.providerName}"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/civ_driver_profile"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Driver Name" />
+
+                    <TextView
+                        android:id="@+id/tvTaxiDriverRating"
+                        style="@style/VerySmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:drawableEnd="@drawable/ic_taxi_star_rated"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"
+                        android:textColor="@color/colorTaxiPrimary"
+                        app:layout_constraintStart_toEndOf="@id/civ_driver_profile"
+                        app:layout_constraintTop_toBottomOf="@id/tvDriverName"
+                        tools:text="4.2" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:maxLines="1"
+                        android:text="@string/vehicle_details"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/civ_driver_profile"
+                        app:layout_constraintTop_toBottomOf="@id/tvTaxiDriverRating" />
+
+                    <ImageView
+                        android:id="@+id/ivVehicleImage"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="8dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/placeholder_car"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/civ_driver_profile" />
+
+                    <TextView
+                        android:id="@+id/tvVehicleNumber"
+                        style="@style/VerySmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toEndOf="@id/ivVehicleImage"
+                        app:layout_constraintTop_toBottomOf="@id/civ_driver_profile"
+                        tools:text="TN12 1234" />
+
+                    <TextView
+                        android:id="@+id/tvVehicleModel"
+                        style="@style/VerySmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:maxLines="1"
+                        app:layout_constraintStart_toEndOf="@id/ivVehicleImage"
+                        app:layout_constraintTop_toBottomOf="@id/tvVehicleNumber"
+                        tools:text="Audi 06" />
+
+                    <TextView
+                        android:id="@+id/tvTaxiServiceType"
+                        style="@style/VerySmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/avenirltstd_medium"
+                        app:layout_constraintStart_toEndOf="@id/ivVehicleImage"
+                        app:layout_constraintTop_toBottomOf="@id/tvVehicleModel"
+                        tools:text="Sedan" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btCancelRequest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:backgroundTint="@color/colorTaxiPrimary"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:text="@string/taxi_cancel"
+                android:textColor="@color/colorWhite"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/btShare"
+                style="@style/MediumText.colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/taxi_round_corner_button"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/taxi_share"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabLocation"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:fontFamily="@font/avenirltstd_medium"
+            android:onClick="@{()-> viewModel.showCurrentLocation()}"
+            android:src="@drawable/ic_taxi_my_location"
+            android:visibility="gone"
+            app:backgroundTint="@color/colorTaxiWhite"
+            app:borderWidth="0dp"
+            app:elevation="12dp"
+            app:fabCustomSize="@dimen/_30sdp"
+            app:fabSize="normal"
+            app:layout_anchor="@id/container"
+            app:layout_anchorGravity="bottom|right"
+            app:layout_insetEdge="bottom" />
+
+        <LinearLayout
+            android:id="@+id/bottom_sheet_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_white"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/MediumText.colorTaxiPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:gravity="center"
+                android:text="@string/daily_ride"
+                android:textColor="@color/colorTaxiPrimary" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:adapter="@{serviceAdapter}"
+                android:minHeight="@dimen/_40sdp"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:layerType="software"
+                android:src="@drawable/bg_dotted_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp">
+
+                <ImageView
+                    android:id="@+id/ivPaymentType"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:contentDescription="@string/payment_type"
+                    android:src="@drawable/ic_money" />
+
+                <TextView
+                    android:id="@+id/tvPaymentDetails"
+                    style="@style/VerySmallText.colorGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_toEndOf="@+id/ivPaymentType"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:text="@string/cash"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnChange"
+                    style="@style/VerySmallText.colorTaxiPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/bg_taxi_change"
+                    android:fontFamily="@font/avenirltstd_medium"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:text="@string/change"
+                    android:textColor="@color/colorTaxiPrimary"
+                    android:visibility="visible"
+                    tools:ignore="UnusedAttribute" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btGetPricing"
+                style="@style/SmallText.colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/taxi_round_corner_button"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/get_pricing"
+                tools:ignore="UnusedAttribute" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:elevation="@dimen/_5sdp"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="100dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+        <FrameLayout
+            android:id="@+id/main_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            android:elevation="2dp"
+            app:layout_anchor="@+id/content_main"
+            app:layout_anchorGravity="center" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

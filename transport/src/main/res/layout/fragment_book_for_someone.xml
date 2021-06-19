@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.fragment.bookforsomeone.BookForSomeOneViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_5sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        tools:context=".ui.fragment.bookforsomeone.BookForSomeOneFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTaxiBookForSomeone"
+            style="@style/SmallText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/book_for_someone" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvBookForSomeoneName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTaxiBookForSomeone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:elevation="@dimen/_2sdp"
+            app:cardBackgroundColor="@color/colorTaxiGreyLight">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etName"
+                style="@style/SmallText.colorGrey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center|start"
+                android:hint="@string/taxi_bookforsomeone_name"
+                android:inputType="text"
+                android:minHeight="@dimen/_35sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvBookForSomeonePhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cvBookForSomeoneName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:elevation="@dimen/_2sdp"
+            app:cardBackgroundColor="@color/colorTaxiGreyLight">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPhoneNumber"
+                style="@style/SmallText.colorGrey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center|start"
+                android:hint="@string/taxi_bookforsomeone_ph_number"
+                android:inputType="phone"
+                android:minHeight="@dimen/_35sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvBookForSomeoneemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cvBookForSomeonePhoneNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:elevation="@dimen/_2sdp"
+            app:cardBackgroundColor="@color/colorTaxiGreyLight">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etemailaddress"
+                style="@style/SmallText.colorGrey"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:gravity="center|start"
+                android:hint="@string/taxi_bookforsomeone_email"
+                android:inputType="text"
+                android:minHeight="@dimen/_35sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/SmallText.colorTaxiPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cvBookForSomeoneemail"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="@{() -> viewModel.dismissPopup()}"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/taxi_bookforsomeone_submit" />
+
+
+    </RelativeLayout>
+</layout>

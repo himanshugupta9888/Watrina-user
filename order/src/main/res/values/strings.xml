@@ -1,0 +1,149 @@
+<resources>
+    <string name="restaurants">SHOPS</string>
+    <string name="offers">Offers</string>
+    <string name="dummy_resturant_name">Savaoury Sea Shell</string>
+    <string name="dummy_cussine_type">Arabian,Chinnes,Indian</string>
+    <string name="dummy_offer_text">15% of all dummy_offer_textorder</string>
+    <string name="dummy_star_rating">4.2</string>
+    <string name="dummy_restaturant_duration">30 Mins</string>
+    <string name="_200_for_two">$200 for two</string>
+    <string name="rating">Rating</string>
+    <string name="timing">Timing</string>
+    <string name="foodie_price">Price</string>
+    <string name="foodie_price_value">$200</string>
+    <string name="items_available">ITEMS AVAILABLE</string>
+    <string name="add_ons">Add ons</string>
+    <string name="add_symbol">+</string>
+    <string name="dummy_foodie_count_txt">0 items $0</string>
+    <string name="view_cart">VIEW CART</string>
+    <string name="schedule">SCHEDULE</string>
+    <string name="place_order">PLACE ORDER</string>
+    <string name="ordered_placed">Order <font color='#01C6DB'>(FD001)</font>placed successfully</string>
+    <string name="delivery_charge">Delivery Charge</string>
+    <string name="coupon">Coupon</string>
+    <string name="view">Apply Coupon</string>
+    <string name="total_charge">Total Charge</string>
+    <string name="foodie_delivery_address">DELIVERY ADDRESS</string>
+    <string name="foodie_change">CHANGE</string>
+    <string name="foodie_home_address">Home Address</string>
+    <string name="dummy_address">12A,prestiagePalladiumbayan,ThousdanLights,chennai</string>
+    <string name="foodie_payment">PAYMENT</string>
+    <string name="dummy_card_num">xxxx xxxx xxxx 1234</string>
+    <string name="extra_charges_may_apply">Extra charges may apply</string>
+    <string name="dummy_price">$10</string>
+    <string name="card_name">Card Name</string>
+    <string name="order_id">Order Id :</string>
+    <string name="otp">OTP</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="dummy_otp_value">1234</string>
+    <string name="order_processed">Reached shop</string>
+    <string name="order_is_getting_processed">Delivery person reached shop</string>
+    <string name="order_delivery">Order Delivery</string>
+    <string name="order_on_the_way">Order picked up</string>
+    <string name="order_on_the_way_desb">Delivery person picked up your order</string>
+    <string name="delivery_person_details">DELIVERY PERSON DETAILS</string>
+    <string name="shope_details">Shop Details</string>
+    <string name="dummy_number">+9123345678</string>
+    <string name="order_detail">ORDER DETAIL</string>
+    <string name="dummy_order_item">Aloo Patty (1 x $10)</string>
+    <string name="dummy_coupon_value">GET 5</string>
+    <string name="foodie_submit">SUBMIT</string>
+    <string name="foodie_leave_your_comments">Leave your comment</string>
+    <string name="xjek_food">GoX Food</string>
+    <string name="cart">Cart</string>
+    <string name="restaturants">RESTATURANTS</string>
+    <string name="dishes">DISHES</string>
+    <string name="order_use_this">USE THIS</string>
+    <string name="address_delete">Are you sure want to delete address?</string>
+    <string name="confirm_location">Confirm Location</string>
+    <string name="order_by">Order By</string>
+    <string name="delivery_tag">Delivery</string>
+    <string name="take_away_tag">Takeway</string>
+    <string name="use_wallet_amount">Use wallet amount</string>
+    <string-array name="restaturant_type">
+        <item>All</item>
+        <item>Veg</item>
+        <item>Non Veg</item>
+    </string-array>
+    <string name="saved_location">Saved Locations</string>
+    <string name="no_address_found">No Address Found</string>
+    <string name="show_with_resturant">SHOW WITH RESTURANT</string>
+    <string name="pure_veg">Pure Veg</string>
+    <string name="non_veg">Non Veg</string>
+    <string name="free_delivery">Free delivery</string>
+    <string name="COSUINE">CATEGORY</string>
+    <string name="apply_filter">APPLY FILTER</string>
+    <string name="filter">FILTER</string>
+    <string name="reset">RESET</string>
+    <string name="no_resturant_found">No Resturant Found</string>
+    <string name="no_shop_found">No Shop Found</string>
+    <string name="closed">Closed</string>
+    <string name="rate_the_service">RATE THE SERVICE</string>
+    <string name="cart_empty_msg">Your Cart is empty.Please add something from menu</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="rate_the_restaurant">RATE THE RESTAURANT</string>
+    <string name="rate_the_shop">RATE THE SHOP</string>
+
+    <string name="order_accepted">Order Accepted</string>
+    <string name="restaurant_confirmation">Awaiting restaurant confirmation</string>
+    <string name="order_awaiting_sub_label">Delivery Executive will be assigned shortly</string>
+    <string name="order_accepted_shop">Order accepted by shop</string>
+    <string name="delivery_person_assigned">Delivery Person Assigned</string>
+    <string name="order_assigned_delivery">your order is assigned to delivery person</string>
+    <string name="service_tax">Service Tax</string>
+    <string name="discount_label">Discount Amount</string>
+    <string name="package_label">Packing Charges</string>
+    <string name="add_new_address">Add New Address</string>
+    <string name="flat_number">Flat Number</string>
+    <string name="street">street</string>
+    <string name="landmark">landmark</string>
+    <string name="title">title</string>
+    <string name="eta">ETA</string>
+    <string name="map_track">Map Track</string>
+    <string name="no_data_found">No data found</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="add_note">ADD NOTE</string>
+    <string name="write_a_note">Write a Note</string>
+    <string name="submit">SUBMIT</string>
+    <string name="YourOrdersArePreparinginTheShop">Your orders are preparing in the shop</string>
+    <string name="validTill">Valid Till:</string>
+    <string name="items">Items</string>
+    <string name="mins">mins</string>
+    <string name="all_orders">%  of all orders</string>
+    <string name="cash">CASH</string>
+    <string name="noaddressfoundpleaseaddaddress">No Address found.Please add address.</string>
+    <string name="card">CARD</string>
+    <string name="order_deliverd_sucessfully">Order Deliverd Successfully</string>
+    <string name="chat_with_delivery_person">Chat</string>
+    <string name="customizable">Customizable</string>
+    <string name="order_approval">Order Approval</string>
+    <string name="wait_for_restaurant_approval">Waiting for restaurant Approval</string>
+    <string name="wait_for_order_approval">Waiting for Shop Approval</string>
+    <string name="order_status">Order Status</string>
+    <string name="order_ready">Order Ready</string>
+    <string name="order_ready_for_pickup">Your order is Ready for the PickUp.</string>
+
+    <plurals name="numberOfItems">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+    <string name="reason">Reasons</string>
+    <string name="order_accepted_by_shop">Your Order is accepted by Shop</string>
+    <string name="repeat_customization">Repeat last used customization?</string>
+    <string name="will_choose">I WILL CHOOSE</string>
+    <string name="repeat">REPEAT LAST</string>
+    <string name="no_categories_found">No Categories Found</string>
+    <string name="shop_discount">Shop Discount</string>
+    <string name="shop_package_charge">Shop Package Charge</string>
+    <string name="item_total">Item Total</string>
+
+    <!-- Gust -->
+    <string name="gust_message">Please Register to Proceed</string>
+    <string name="image_view">ImageView</string>
+    <string name="promo_code">Promo Code</string>
+    <string name="door_delivery">doorstep delivery</string>
+    <string name="item_not_avaialable">Item not available</string>
+</resources>

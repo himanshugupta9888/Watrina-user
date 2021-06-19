@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="resturantItemClick"
+            type="com.gox.foodiemodule.adapter.FoodieItemClickListner" />
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/resturantListCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/resturant_image_cv"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/resturant_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dummy_foodi_banner" />
+
+                <RelativeLayout
+                    android:id="@+id/closed_lay"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:alpha="0.7"
+                    android:background="@android:color/black"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/MediumText.colorWhite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/closed" />
+
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/resturant_image_cv"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/restaturant_name"
+                    style="@style/SmallText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="@string/dummy_resturant_name"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/restaturant_cusinetype_tv"
+                    style="@style/VerySmallText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_3sdp"
+                    android:maxLines="1"
+                    android:text="@string/dummy_cussine_type" />
+
+                <TextView
+                    android:id="@+id/offer_tv"
+                    style="@style/VerySmallText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_discount"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:padding="@dimen/_3sdp"
+                    android:text="@string/dummy_offer_text"
+                    android:textColor="@color/foodie_red" />
+
+                <LinearLayout
+                    android:id="@+id/rating_lay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/resturantRating_tv"
+                        style="@style/VerySmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/dummy_star_rating"
+                        android:textColor="@color/foodie_red" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_12sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_3sdp"
+                        android:src="@drawable/ic_star"/>
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@drawable/foodie_custom_circle"
+                        android:padding="@dimen/_5sdp"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/est_time_tv"
+                        style="@style/VerySmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/dummy_restaturant_duration"
+                        android:textSize="@dimen/_8sdp" />
+
+
+                    <TextView
+                        android:id="@+id/minamount_tv"
+                        style="@style/SmallText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@string/_200_for_two"
+                        android:textSize="@dimen/_8sdp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlProviderList"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/xuber_custom_round_corner"
+        android:padding="@dimen/_5sdp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/provider_img"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_profile_place_holder" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_toEndOf="@+id/provider_img"
+            android:orientation="vertical"
+            android:padding="@dimen/_2sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/provider_name_tv"
+                    style="@style/SmallText.Black"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1.2"
+                    android:padding="@dimen/_5sdp"
+                    tools:text="@string/dummy_name" />
+
+                <TextView
+                    android:id="@+id/provider_distance_tv"
+                    style="@style/VerySmallText"
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="0.8"
+                    android:gravity="end"
+                    android:padding="@dimen/_1sdp"
+                    android:text="@string/dummy_distance"
+                    android:textColor="@color/grey" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/provider_base_fare_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/MediumText"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    tools:text="@string/dummy_provider_base_fare"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/provider_rating_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    style="@style/SmallText"
+                    android:drawableEnd="@drawable/ic_xuber_star"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="end"
+                    tools:text="@string/dummy_star_rating" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

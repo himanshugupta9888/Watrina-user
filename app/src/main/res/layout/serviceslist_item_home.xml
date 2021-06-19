@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemClickListener"
+            type="com.gox.app.adapter.CustomClickListener" />
+    </data>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="?android:attr/actionBarItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{()->itemClickListener.onListClickListner()}"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <ImageView
+            android:id="@+id/service_icon_imgv"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_round_service"
+            android:contentDescription="@string/service_image"
+            android:padding="12dp"
+            android:src="@drawable/ic_sedan_car_model" />
+
+
+        <TextView
+            android:id="@+id/service_name_tv"
+            style="@style/SmallText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:lines="2"
+            android:maxLines="2"
+            android:text="@string/dummy_servicename"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_8sdp"
+            tools:text="Test" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

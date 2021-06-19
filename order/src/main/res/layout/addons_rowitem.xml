@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp">
+
+        <CheckBox
+            android:id="@+id/addons_item_tv"
+            style="@style/VerySmallText.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:text="@string/add_ons"
+            android:buttonTint="@color/foodie_red"
+            android:textAllCaps="false" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/SmallText"
+            android:gravity="center_vertical"
+            android:id="@+id/addons_item_price"
+            android:textColor="@color/dark_grey"
+            android:padding="@dimen/_5sdp"
+            android:layout_alignParentEnd="true"
+            tools:text="$10"/>
+
+    </RelativeLayout>
+
+</layout>

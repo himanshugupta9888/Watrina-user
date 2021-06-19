@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.taximodule.ui.fragment.confirmpage.ConfirmPageViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:cardBackgroundColor="@color/colorTaxiGrey1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/ic_rounded_back"
+                android:onClick="@{()->viewModel.goToHome()}"
+                android:contentDescription="@string/back" />
+
+            <TextView
+                style="@style/MediumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:layout_toEndOf="@+id/ivBack"
+                android:text="@string/price_estimation" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

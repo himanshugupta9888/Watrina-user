@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="homefragmentmodel"
+            type="com.gox.app.ui.home_fragment.HomeFragmentViewModel" />
+
+        <variable
+            name="serviceListAdapter"
+            type="com.gox.app.adapter.ServiceListAdapter" />
+
+        <variable
+            name="homeCouponAdapter"
+            type="com.gox.app.ui.home_fragment.HomeCouponAdapter" />
+
+        <variable
+            name="mostRecentAdapter"
+            type="com.gox.app.ui.home_fragment.MostRecentAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/homefrg_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:elevation="4dp"
+            android:minHeight="?attr/actionBarSize"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:titleTextAppearance="@style/MediumText">
+
+            <LinearLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    style="@style/SmallText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:drawableStart="@drawable/ic_location"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:text="@string/location"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="UnusedAttribute" />
+
+                <TextView
+                    android:id="@+id/location_homefragment_tv"
+                    style="@style/SmallText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:drawableEnd="@drawable/ic_down_arrow"
+                    android:drawablePadding="8dp"
+                    android:gravity="center|start"
+                    android:padding="5dp"
+                    android:text="@string/user_main_loading"
+                    android:textSize="@dimen/_10sdp" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_background_color"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/font_bold"
+                    android:text="@string/recently_used"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="@{homefragmentmodel.isShownRecent ? View.VISIBLE : View.GONE}" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMostRecent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adapter="@{mostRecentAdapter}"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/item_most_recent_service" />
+
+                <TextView
+                    android:id="@+id/tvServicesLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/font_bold"
+                    android:text="@string/our_services"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:id="@+id/rlServiceRoot"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_200sdp"
+                        android:animateLayoutChanges="true"
+                        android:padding="8dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/servicelist_frghome_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adapter="@{serviceListAdapter}"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:spanCount="4"
+                            tools:listitem="@layout/serviceslist_item_home" />
+
+                        <TextView
+                            android:id="@+id/tvNoServiceFound"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/no_service_found_contact_admin"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/btnShowMoreLess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="-24dp"
+                    android:layout_marginEnd="24dp"
+                    android:backgroundTint="@color/colorPrimaryLight"
+                    android:fontFamily="@font/font_normal"
+                    android:onClick="@{() -> homefragmentmodel.showMoreLess()}"
+                    android:text="@string/user_show_more"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_8sdp" />
+
+                <TextView
+                    style="@style/BoldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="@string/offers_coupons"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp" />
+
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPagerCoupons"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:adapter="@{homeCouponAdapter}" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</layout>

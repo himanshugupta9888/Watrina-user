@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="cardsmodel"
+            type="com.gox.basemodule.common.payment.adapter.CustomClickListner" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:elevation="@dimen/_5sdp"
+        app:cardBackgroundColor="#faf9f6"
+        app:cardUseCompatPadding="false"
+        app:elevation="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_card_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/font_normal"
+                android:text="@string/visa"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/tv_card_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:fontFamily="@font/font_normal"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp"
+                tools:text="xxxx xxxx xxxx xxxx" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

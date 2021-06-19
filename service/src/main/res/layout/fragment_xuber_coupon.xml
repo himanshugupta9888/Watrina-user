@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.xubermodule.ui.fragment.coupon.XuberCouponViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:onClick="@{()->viewModel.dismissPopup()}"
+        tools:context=".ui.fragment.coupon.XuberCouponFragment">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            tools:ignore="UselessParent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPagerCoupons"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_20sdp" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewPagerCoupons"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@color/colorWhite"
+                    app:tabBackground="@drawable/xuber_coupon_tab_selector"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivTaxiCoupon"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_gravity="center|top"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_xuber_coupon" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,181 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.foodiemodule.fragment.coupon.rating.RatingFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_background_color"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/foodie_rating"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/ic_rating_icon"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/foodie_red"
+                android:theme="@style/RatingBar" />
+
+            <TextView
+                android:id="@+id/foodie_add_note_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/foodie_rating"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/rating"
+                android:textColor="@color/dark_grey" />
+
+            <LinearLayout
+                android:id="@+id/ll_user_name"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:background="@drawable/bg_half_circle_rectangle"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/rating_provider_civ"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="2dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_profile_place_holder" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_rating_user_name"
+                        style="@style/VerySmallText.colorGrey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/black"
+                        tools:text="John Wilson" />
+
+                    <TextView
+                        android:id="@+id/rate_card_driver_ratingtv"
+                        style="@style/SmallText.colorTaxiPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:drawableEnd="@drawable/ic_star"
+                        android:drawablePadding="@dimen/_5sdp"
+                        android:gravity="center"
+                        tools:text="4.5" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/rate_service_label"
+                style="@style/MediumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/rate_the_service"
+                android:textColor="@color/foodie_red" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating_service"
+                style="@android:style/Widget.Material.Light.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:numStars="5"
+                android:stepSize="1"
+                android:scaleX="0.7"
+                android:scaleY="0.8"
+                android:theme="@style/FoodieRatingBar" />
+
+            <TextView
+                android:id="@+id/txt_rate_restayrant"
+                style="@style/MediumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/rate_the_restaurant"
+                android:textColor="@color/foodie_red" />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating_restaurant"
+                style="@android:style/Widget.Material.Light.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:numStars="5"
+                android:rating="1"
+                android:scaleX="0.7"
+                android:scaleY="0.8"
+                android:stepSize="1"
+                android:theme="@style/FoodieRatingBar" />
+
+            <EditText
+                android:id="@+id/et_add_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/foodie_add_note_label"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/custom_roundcorner_button"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="@font/avenirltstd_medium"
+                android:gravity="start"
+                android:hint="@string/write_a_note"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:minHeight="@dimen/_60sdp"
+                android:singleLine="true"
+                android:textSize="@dimen/_11sdp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_17sdp"
+                android:background="@drawable/addons_round_corner"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/foodie_submit"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

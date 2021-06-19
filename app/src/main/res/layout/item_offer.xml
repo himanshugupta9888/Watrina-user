@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="2dp">
+
+
+    <ImageView
+        android:id="@+id/offerlist_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:backgroundTint="@color/app_background_color"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/service_banner" />
+
+    <TextView
+        android:id="@+id/offer_decription"
+        style="@style/SmallText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:alpha="0.5"
+        android:background="@android:color/black"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/_10sdp"
+        tools:text="Test offer 25%" />
+
+</androidx.cardview.widget.CardView>

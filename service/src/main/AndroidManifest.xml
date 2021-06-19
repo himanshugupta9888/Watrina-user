@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gox.xubermodule">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.serviceflowactivity.ServiceFlowActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.selectlocation.SelectLocationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.providerdetail.ProviderDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.provierlistactivity.ProvidersActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.mainactivity.XuberMainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!--android:launchMode="singleTask"-->
+        <!--android:taskAffinity="com.xjek.xber"-->
+
+
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.xubersubserviceactivity.XuberSubServiceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.locationpick.ServiceLocationPickActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.providerreviews.ProviderReviewsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.gox.xubermodule.ui.activity.confirmbooking.ConfirmBookingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+    </application>
+
+</manifest>

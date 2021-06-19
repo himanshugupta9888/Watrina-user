@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="providerListAdapter"
+            type="com.gox.xubermodule.ui.adapter.ProviderListAdapter" />
+
+
+    </data>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_2sdp"
+                android:layout_margin="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/sv_providers"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@color/colorWhite"
+                    app:iconifiedByDefault="false"
+                    android:gravity="center|left"
+                    android:layout_gravity="center"
+                    style="@style/MediumText"
+                    app:queryHint="@string/search_hint_xuber" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/providers_list_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{providerListAdapter}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                style="@style/MediumText.colorBlack"
+                android:layout_width="match_parent"
+                android:id="@+id/no_nearby_txt"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:text="@string/no_nearby_providers" />
+
+        </LinearLayout>
+</layout>

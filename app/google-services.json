@@ -1,0 +1,167 @@
+{
+  "project_info": {
+    "project_number": "820563974802",
+    "firebase_url": "https://watrina-a96bb-default-rtdb.firebaseio.com",
+    "project_id": "watrina-a96bb",
+    "storage_bucket": "watrina-a96bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820563974802:android:3d477b899be0c18464e44b",
+        "android_client_info": {
+          "package_name": "com.watirna.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820563974802-gd1b56pek1ghf7nkej96oos3op4dv5fl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watirna.app",
+            "certificate_hash": "52d2571f899d74abf677156a429d887b0b937ed8"
+          }
+        },
+        {
+          "client_id": "820563974802-tn7eu1ovrm2iioj22a1l4r6hqd2ln0nk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watirna.app",
+            "certificate_hash": "11fcf1c578417e242b8d666a05e0234c53caf89a"
+          }
+        },
+        {
+          "client_id": "820563974802-junkcnsfiko6cmenhotjt9u1ehkc65mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW8Vui9DVNTWrhEnXNXDbX8UTrlMbjLCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820563974802-junkcnsfiko6cmenhotjt9u1ehkc65mr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "820563974802-9s2oke9c0vje1fjh9352c1feulq1e2r1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.watrina.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820563974802:android:04b85f043e02853564e44b",
+        "android_client_info": {
+          "package_name": "com.watirna.partner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820563974802-4vammhb4rk8g6n1edhi5fpp1achov2or.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watirna.partner",
+            "certificate_hash": "11fcf1c578417e242b8d666a05e0234c53caf89a"
+          }
+        },
+        {
+          "client_id": "820563974802-9dtl9tain5hu1o3vi9rtcoi5363t452m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watirna.partner",
+            "certificate_hash": "9b554780dab8d093a770ced81a4838d55510d260"
+          }
+        },
+        {
+          "client_id": "820563974802-junkcnsfiko6cmenhotjt9u1ehkc65mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW8Vui9DVNTWrhEnXNXDbX8UTrlMbjLCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820563974802-junkcnsfiko6cmenhotjt9u1ehkc65mr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "820563974802-9s2oke9c0vje1fjh9352c1feulq1e2r1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.watrina.user"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820563974802:android:af31de8df5dd376d64e44b",
+        "android_client_info": {
+          "package_name": "com.watirna.shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "820563974802-n82b2qnu46v018s22dkqtb4g9387apba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watirna.shop",
+            "certificate_hash": "448cf5f0ec20dc3d5e70c35bf4c42908391ede1a"
+          }
+        },
+        {
+          "client_id": "820563974802-s4jqn8simsvte9o8vuirpglrama7qs6s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.watirna.shop",
+            "certificate_hash": "11fcf1c578417e242b8d666a05e0234c53caf89a"
+          }
+        },
+        {
+          "client_id": "820563974802-junkcnsfiko6cmenhotjt9u1ehkc65mr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW8Vui9DVNTWrhEnXNXDbX8UTrlMbjLCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "820563974802-junkcnsfiko6cmenhotjt9u1ehkc65mr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "820563974802-9s2oke9c0vje1fjh9352c1feulq1e2r1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.watrina.user"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

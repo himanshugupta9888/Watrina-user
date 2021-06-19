@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.florent37:materialleanback:1.0.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/23367b98ff506d08d6f6d5b9230349a0/jetified-materialleanback-1.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/23367b98ff506d08d6f6d5b9230349a0/jetified-materialleanback-1.0.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/23367b98ff506d08d6f6d5b9230349a0/jetified-materialleanback-1.0.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.florent37/materialleanback/1.0.2/effb4ad92b09f263c85547cba250831801c6d6b9/materialleanback-1.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.florent37/materialleanback/1.0.2/cabe3b250e40e21218a2000bd3c089c4eaecbbf0/materialleanback-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

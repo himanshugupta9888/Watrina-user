@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:elevation="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tvServiceETA"
+                    style="@style/SmallText.colorTaxiPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    tools:text="2 mins" />
+
+                <ImageView
+                    android:id="@+id/ivVehicleImage"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_below="@+id/tvServiceETA"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/demo_car" />
+
+                <TextView
+                    android:id="@+id/tvVehicleName"
+                    style="@style/SmallText.colorWhite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivVehicleImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/xuber_custom_round_corner"
+                    android:backgroundTint="@color/colorTaxiPrimary"
+                    tools:text="HatchBag" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

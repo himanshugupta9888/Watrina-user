@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="itemClickListener"
+            type="com.gox.app.adapter.CustomClickListener" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:onClick="@{()->itemClickListener.onListClickListner()}"
+        android:padding="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/dispute_name_tv"
+            style="@style/SmallText.Black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/dummy_transport_txt"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+</layout>

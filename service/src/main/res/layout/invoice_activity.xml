@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <!--    <variable
+                name="xuberSubServiceViewModel"
+                type="com.xjek.xubermodule.ui.activity.xubersubserviceactivity.XuberSubServiceViewModel" />
+
+            <variable
+                name="subServiceAdapter"
+                type="com.xjek.xubermodule.ui.adapter.XuberSubServiceAdapter" />
+        -->
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/invoice_tv"
+            style="@style/BoldText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/xuber_invoice"
+            android:textColor="@color/black" />
+
+        <ScrollView
+            android:id="@+id/scvInvoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/invoice_tv"
+            android:layout_marginTop="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/image_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_5sdp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/before_img"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/semi_white"
+                            android:padding="@dimen/_3sdp"
+                            android:src="@drawable/ic_profile_place_holder" />
+
+                        <TextView
+                            style="@style/SmallText.Black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/before_img"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_before" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/after_img"
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_70sdp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/semi_white"
+                            android:padding="@dimen/_3sdp"
+                            android:src="@drawable/ic_profile_place_holder" />
+
+                        <TextView
+                            style="@style/SmallText.Black"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/after_img"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_after" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/xuber_bg_rect_dotted_line"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            style="@style/LightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_booking_id"
+                            android:textColor="@color/colorTaxiGrey"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/bookingid_value_tv"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"
+                            android:textColor="@color/colorTaxiGrey"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="SER784535" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/LightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_base_fare"
+                            android:textColor="@color/colorTaxiGrey"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/basefare_value_tv"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="@string/dummy_amount" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlPromoCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/LightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/coupon"
+                            android:textColor="@color/colorTaxiGrey"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/tvPromoCodeDeduction"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="@string/dummy_amount" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/LightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_tax_fare"
+                            android:textColor="@color/colorTaxiGrey"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/taxfare_value_tv"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="@string/dummy_amount" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/SmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_tips"
+                            android:textColor="@color/colorXuberPrimary" />
+
+
+                        <TextView
+                            android:id="@+id/xuber_tips_value_tv"
+                            style="@style/SmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/tips_add"
+                            android:textColor="@color/colorXuberPrimary" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlExtraCharges"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_extra_charge"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/extra_charge_value_tv"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="@string/dummy_amount" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/LightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_total"
+                            android:textColor="@color/colorTaxiGrey"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/total_value_tv"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="@string/dummy_amount" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlWallet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp">
+
+                        <TextView
+                            style="@style/LightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/wallet_deduction"
+                            android:textColor="@color/colorTaxiGrey"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/tvWalletDeduction"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="@string/dummy_amount" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:background="@drawable/xuber_bg_rect_dotted_line"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/payment_label"
+                            style="@style/LightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/amount_to_be_paid"
+                            android:textSize="@dimen/_10sdp" />
+
+
+                        <TextView
+                            android:id="@+id/pay_amount_value_tv"
+                            style="@style/SmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:padding="@dimen/_5sdp"
+                            android:textSize="@dimen/_10sdp"
+                            tools:text="@string/dummy_amount" />
+
+                        <TextView
+                            android:id="@+id/payment_type_tv"
+                            style="@style/SmallText.Black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/payment_label"
+                            android:drawableStart="@drawable/ic_xuber_cash"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_cash"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:id="@+id/payment_change_type_tv"
+                            style="@style/SmallText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/payment_label"
+                            android:layout_alignParentEnd="true"
+                            android:drawablePadding="@dimen/_5sdp"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/xuber_change"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_12sdp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/confrimpayment"
+            style="@style/SmallText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/scvInvoice"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/rounded_corner_blue_bg"
+            android:text="@string/done"
+            android:textColor="@color/colorWhite" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@drawable/bg_dotted_grey_rectangle"
+    android:padding="@dimen/_10sdp">
+
+    <TextView
+        android:id="@+id/tvCouponCode"
+        style="@style/MediumText.colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="GET5" />
+
+    <TextView
+        android:id="@+id/tvUseThis"
+        style="@style/MediumText.colorTaxiPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorTaxiPrimary"
+        android:text="@string/taxi_coupon_code_use_this" />
+
+    <TextView
+        android:id="@+id/tvCouponDescription"
+        style="@style/MediumText.colorGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCouponCode"
+        android:layout_marginTop="@dimen/_15sdp"
+        tools:text="Use GET5 code to get discount for your ride" />
+
+    <TextView
+        android:id="@+id/tvCouponValidity"
+        style="@style/SmallText.colorTaxiGrey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCouponDescription"
+        android:layout_marginTop="@dimen/_10sdp"
+        />
+
+
+</RelativeLayout><!--<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+&lt;!&ndash;
+        <variable
+            name="viewModel"
+            type="com.xjek.taximodule.ui.activity.main.TaxiMainViewModel" />&ndash;&gt;
+    </data>-->
+
+
+    <!--
+    </layout>-->

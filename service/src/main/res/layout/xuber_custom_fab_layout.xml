@@ -1,0 +1,40 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <!-- Other components and views -->
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:backgroundTint="@color/colorXuberWhite"
+            app:buttonGravity="bottom|top"
+            app:fabAlignmentMode="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/waiting_for_provider_accept"
+            style="@style/MediumText.colorBlack"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:layout_gravity="center" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/setWallpaper"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            app:backgroundTint="@android:color/transparent"
+            app:fabSize="normal"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:background="@null"
+            app:layout_anchor="@id/bottomAppBar" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

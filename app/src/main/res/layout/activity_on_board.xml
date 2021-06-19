@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.gox.app.ui.onboard.OnBoardViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager_onboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/indicator"
+                android:overScrollMode="never"
+                android:padding="8dp" />
+
+            <com.gox.app.ui.onboard.CircleIndicator
+                android:id="@+id/indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp"
+                app:ci_animator="@animator/indicator_animator"
+                app:ci_animator_reverse="@animator/indicator_animator_reverse"
+                app:ci_drawable="@drawable/bg_on_board_indicator"
+                app:ci_height="12dp"
+                app:ci_margin="6dp"
+                app:ci_width="12dp" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signup_btn"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#000"
+                android:fontFamily="@font/font_normal"
+                android:onClick="@{() -> viewModel.openSignUp()}"
+                android:text="@string/sign_up"
+                android:textColor="@color/colorWhite" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signin_btn"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="@font/font_normal"
+                android:onClick="@{() -> viewModel.openSignIn()}"
+                android:text="@string/sign_in"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

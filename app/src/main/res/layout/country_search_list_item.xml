@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="itemClickListener"
+            type="com.gox.app.adapter.CustomClickListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->itemClickListener.onListClickListner()}"
+        android:orientation="vertical">
+
+        <!-- Single ListItem -->
+
+        <TextView
+            android:id="@+id/county_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_normal"
+            android:padding="@dimen/_10sdp"
+            android:textSize="@dimen/_12sdp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/colorTaxiGrey" />
+
+    </LinearLayout>
+</layout>
+
