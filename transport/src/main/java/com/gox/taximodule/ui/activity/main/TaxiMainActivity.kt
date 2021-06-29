@@ -293,7 +293,7 @@ class TaxiMainActivity : BaseActivity<TaxiActivityMainBinding>(),
                 return@setOnClickListener
             }
             if (mTaxiMainViewModel.serviceType.get().equals("")) {
-                ViewUtils.showNormalToast(this, getString(R.string.SelectTheServiceType))
+//                ViewUtils.showNormalToast(this, getString(R.string.SelectTheServiceType))
                 return@setOnClickListener
             } else {
                 /*   val confirmPageFragment: ConfirmPageFragment = ConfirmPageFragment.newInstance()

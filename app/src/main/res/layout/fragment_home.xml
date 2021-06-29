@@ -90,6 +90,260 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+                
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_150sdp"
+                    android:src="@drawable/img"/>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_white"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:id="@+id/ll_taxi"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/ic_cap"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:text="Cab"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_grocery"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/ic_grocery"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:text="Grocery"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_send"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/ic_send"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:text="Send"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_food"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/ic_food"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:text="Food"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_bus"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:layout_marginLeft="@dimen/_20sdp"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/ic_bus"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:text="Bus"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_rental"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/ic_rental"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:text="Rental"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_airport"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/ic_airport"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:text="Airport"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_services"
+                            android:layout_marginLeft="@dimen/_2sdp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:adjustViewBounds="true"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:src="@drawable/ic_service"/>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:layout_margin="@dimen/_2sdp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:text="Services"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/img_ride"
+                    android:adjustViewBounds="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:src="@drawable/ic_ride"/>
+                <ImageView
+                    android:id="@+id/img_food"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:adjustViewBounds="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_120sdp"
+                    android:src="@drawable/ic_fooies"/>
+                <androidx.cardview.widget.CardView
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_200sdp"
+                        android:animateLayoutChanges="true"
+                        android:padding="8dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adapter="@{serviceListAdapter}"
+                            android:clipToPadding="false"
+                            android:overScrollMode="never"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            app:spanCount="4"
+                            tools:listitem="@layout/serviceslist_item_home" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/no_service_found_contact_admin"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -101,9 +355,11 @@
                     android:text="@string/recently_used"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/_12sdp"
-                    android:visibility="@{homefragmentmodel.isShownRecent ? View.VISIBLE : View.GONE}" />
+                    android:visibility="gone"
+                    />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="gone"
                     android:id="@+id/rvMostRecent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -118,6 +374,7 @@
                     tools:listitem="@layout/item_most_recent_service" />
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/tvServicesLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -130,6 +387,7 @@
                     android:textSize="@dimen/_12sdp" />
 
                 <androidx.cardview.widget.CardView
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -169,6 +427,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <Button
+                    android:visibility="gone"
                     android:id="@+id/btnShowMoreLess"
                     android:layout_width="wrap_content"
                     android:layout_height="36dp"
@@ -184,6 +443,7 @@
                     android:textSize="@dimen/_8sdp" />
 
                 <TextView
+                    android:visibility="gone"
                     style="@style/BoldText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -197,6 +457,7 @@
 
 
                 <androidx.viewpager.widget.ViewPager
+                    android:visibility="gone"
                     android:id="@+id/viewPagerCoupons"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"

@@ -2,11 +2,14 @@ package com.gox.app.ui.home_fragment
 
 import android.annotation.SuppressLint
 import android.app.Activity.RESULT_CANCELED
+import android.app.Dialog
 import android.content.Intent
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.ImageView
 import androidx.databinding.Bindable
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
@@ -16,8 +19,10 @@ import com.gox.app.adapter.ServiceListAdapter
 import com.gox.app.callbacks.OnClickListener
 import com.gox.app.data.repositary.remote.model.City
 import com.gox.app.data.repositary.remote.model.HomeMenuResponse
+import com.gox.app.data.repositary.remote.model.Service
 import com.gox.app.databinding.FragmentHomeBinding
 import com.gox.app.ui.cityListActivity.CityListActivity
+import com.gox.app.ui.services.ServicesActivity
 import com.gox.app.ui.viewCouponActivity.ViewCouponActivity
 import com.gox.basemodule.BaseApplication
 import com.gox.basemodule.base.BaseFragment
@@ -161,6 +166,49 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeFragmentNavigator 
                 homeFragmentViewModel.getProfileCountryList()
             }
         })
+        mViewDataBinding.llServices.setOnClickListener{
+            val intent = Intent(activity!!, ServicesActivity::class.java)
+            startActivity(intent)
+        }
+        mViewDataBinding.llTaxi.setOnClickListener{
+            val intent = Intent(activity, TaxiMainActivity::class.java)
+            intent.putExtra("serviceId", "1")
+            startActivity(intent)
+        }
+        mViewDataBinding.imgRide.setOnClickListener{
+            val intent = Intent(activity, TaxiMainActivity::class.java)
+            intent.putExtra("serviceId", "1")
+            startActivity(intent)
+        }
+        mViewDataBinding.llAirport.setOnClickListener{
+            val intent = Intent(activity, TaxiMainActivity::class.java)
+            intent.putExtra("serviceId", "1")
+            startActivity(intent)
+        }
+        mViewDataBinding.llFood.setOnClickListener{
+            val intent = Intent(activity, RestaurantListActivity::class.java)
+            intent.putExtra("serviceId", "52")
+            startActivity(intent)
+        }
+        mViewDataBinding.imgFood.setOnClickListener{
+            val intent = Intent(activity, RestaurantListActivity::class.java)
+            intent.putExtra("serviceId", "52")
+            startActivity(intent)
+        }
+        mViewDataBinding.llGrocery.setOnClickListener{
+            val intent = Intent(activity, RestaurantListActivity::class.java)
+            intent.putExtra("serviceId", "53")
+            startActivity(intent)
+        }
+        mViewDataBinding.llSend.setOnClickListener{
+            showDialog()
+        }
+        mViewDataBinding.llBus.setOnClickListener{
+            showDialog()
+        }
+        mViewDataBinding.llRental.setOnClickListener{
+            showDialog()
+        }
 
         mViewDataBinding.locationHomefragmentTv.setOnClickListener {
             val intent = Intent(activity!!, CityListActivity::class.java)
@@ -218,6 +266,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeFragmentNavigator 
             startActivity(intent)
 
         }
+    }
+    private fun showDialog() {
+        val dialog = Dialog(activity!!)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.custom_layout)
+
+//        val yesBtn = dialog.findViewById(R.id.yesBtn) as Button
+        val clearBtn = dialog.findViewById(R.id.clearBtn) as ImageView
+//        yesBtn.setOnClickListener {
+//            dialog.dismiss()
+//        }
+        clearBtn.setOnClickListener { dialog.dismiss() }
+        dialog.show()
+
     }
 
 
