@@ -51,18 +51,18 @@ class ServicesActivity : BaseActivity<ActivityServicesBinding>() {
         mViewDataBinding.llMaid.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
             XuberServiceClass.serviceID = 19
-            XuberServiceClass.serviceName = "Mechanic"
+            XuberServiceClass.serviceName = "Maids"
             startActivity(intent)
         }
         mViewDataBinding.llTravel.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 29
+            XuberServiceClass.serviceID = 31
             XuberServiceClass.serviceName = "Travel Agent"
             startActivity(intent)
         }
         mViewDataBinding.llInsurance.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 31
+            XuberServiceClass.serviceID = 29
             XuberServiceClass.serviceName = "Insurance Agent"
             startActivity(intent)
         }
@@ -91,18 +91,7 @@ class ServicesActivity : BaseActivity<ActivityServicesBinding>() {
             XuberServiceClass.serviceName = "Translator"
             startActivity(intent)
         }
-        mViewDataBinding.llMobileTech.setOnClickListener {
-            val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 51
-            XuberServiceClass.serviceName = "Translator"
-            startActivity(intent)
-        }
-        mViewDataBinding.llMobileTech.setOnClickListener {
-            val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 51
-            XuberServiceClass.serviceName = "Translator"
-            startActivity(intent)
-        }
+
         mViewDataBinding.llBeauty.setOnClickListener {
             showDialog()
         }
