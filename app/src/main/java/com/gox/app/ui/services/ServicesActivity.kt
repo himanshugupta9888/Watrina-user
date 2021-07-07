@@ -31,32 +31,32 @@ class ServicesActivity : BaseActivity<ActivityServicesBinding>() {
         this.mViewDataBinding.lifecycleOwner = this
         mViewDataBinding.llElectrician.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 3
+            XuberServiceClass.serviceID = 1
             XuberServiceClass.serviceName = "Electrician"
             startActivity(intent)
         }
 
         mViewDataBinding.llPlumber.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 4
+            XuberServiceClass.serviceID = 2
             XuberServiceClass.serviceName = "Plumber"
             startActivity(intent)
         }
         mViewDataBinding.llMechanic.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 7
+            XuberServiceClass.serviceID = 5
             XuberServiceClass.serviceName = "Mechanic"
             startActivity(intent)
         }
         mViewDataBinding.llMaid.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 19
+            XuberServiceClass.serviceID = 17
             XuberServiceClass.serviceName = "Maids"
             startActivity(intent)
         }
         mViewDataBinding.llTravel.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 31
+            XuberServiceClass.serviceID = 27
             XuberServiceClass.serviceName = "Travel Agent"
             startActivity(intent)
         }
@@ -68,26 +68,26 @@ class ServicesActivity : BaseActivity<ActivityServicesBinding>() {
         }
         mViewDataBinding.llComputerTech.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 39
+            XuberServiceClass.serviceID = 37
             XuberServiceClass.serviceName = "Computer Repairer"
             startActivity(intent)
         }
         mViewDataBinding.llMobileTech.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 44
+            XuberServiceClass.serviceID = 42
             XuberServiceClass.serviceName = "Mobile Technician"
             startActivity(intent)
         }
         mViewDataBinding.llRoadAssistance.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 48
+            XuberServiceClass.serviceID = 46
             XuberServiceClass.serviceName = "Road Assistance"
             startActivity(intent)
         }
 
         mViewDataBinding.llTranslator.setOnClickListener {
             val intent = Intent(applicationContext, XuberMainActivity::class.java)
-            XuberServiceClass.serviceID = 51
+            XuberServiceClass.serviceID = 49
             XuberServiceClass.serviceName = "Translator"
             startActivity(intent)
         }
@@ -118,15 +118,15 @@ class ServicesActivity : BaseActivity<ActivityServicesBinding>() {
     private fun showDialog() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setCancelable(false)
+        dialog.setCancelable(true)
         dialog.setContentView(R.layout.custom_layout)
 
 //        val yesBtn = dialog.findViewById(R.id.yesBtn) as Button
-        val clearBtn = dialog.findViewById(R.id.clearBtn) as ImageView
-//        yesBtn.setOnClickListener {
-//            dialog.dismiss()
-//        }
-        clearBtn.setOnClickListener { dialog.dismiss() }
+//        val clearBtn = dialog.findViewById(R.id.clearBtn) as ImageView
+////        yesBtn.setOnClickListener {
+////            dialog.dismiss()
+////        }
+//        clearBtn.setOnClickListener { dialog.dismiss() }
         dialog.show()
 
 //        val mDialogView = LayoutInflater.from(this).inflate(R.layout.custom_layout, null)

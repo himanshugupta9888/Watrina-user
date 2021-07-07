@@ -177,27 +177,27 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeFragmentNavigator 
         }
         mViewDataBinding.imgRide.setOnClickListener{
             val intent = Intent(activity, TaxiMainActivity::class.java)
-            intent.putExtra("serviceId", "1")
+            intent.putExtra("serviceId", 1)
             startActivity(intent)
         }
         mViewDataBinding.llAirport.setOnClickListener{
             val intent = Intent(activity, TaxiMainActivity::class.java)
-            intent.putExtra("serviceId", "1")
+            intent.putExtra("serviceId", 1)
             startActivity(intent)
         }
         mViewDataBinding.llFood.setOnClickListener{
             val intent = Intent(activity, RestaurantListActivity::class.java)
-            intent.putExtra("serviceId", "52")
+            intent.putExtra("serviceId", 1)
             startActivity(intent)
         }
         mViewDataBinding.imgFood.setOnClickListener{
             val intent = Intent(activity, RestaurantListActivity::class.java)
-            intent.putExtra("serviceId", "52")
+            intent.putExtra("serviceId", 1)
             startActivity(intent)
         }
         mViewDataBinding.llGrocery.setOnClickListener{
             val intent = Intent(activity, RestaurantListActivity::class.java)
-            intent.putExtra("serviceId", "53")
+            intent.putExtra("serviceId", 2)
             startActivity(intent)
         }
         mViewDataBinding.llSend.setOnClickListener{
@@ -270,15 +270,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeFragmentNavigator 
     private fun showDialog() {
         val dialog = Dialog(activity!!)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setCancelable(false)
+        dialog.setCancelable(true)
         dialog.setContentView(R.layout.custom_layout)
 
 //        val yesBtn = dialog.findViewById(R.id.yesBtn) as Button
-        val clearBtn = dialog.findViewById(R.id.clearBtn) as ImageView
-//        yesBtn.setOnClickListener {
-//            dialog.dismiss()
-//        }
-        clearBtn.setOnClickListener { dialog.dismiss() }
+//        val clearBtn = dialog.findViewById(R.id.clearBtn) as ImageView
+////        yesBtn.setOnClickListener {
+////            dialog.dismiss()
+////        }
+//        clearBtn.setOnClickListener { dialog.dismiss() }
         dialog.show()
 
     }
