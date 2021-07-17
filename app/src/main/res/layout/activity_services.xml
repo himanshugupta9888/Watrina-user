@@ -360,7 +360,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_11sdp"
-                        android:text="Security"
+                        android:text="Landscaping &amp; Lawn Care "
                         android:singleLine="true"
                         android:textColor="@color/colorPrimary"
                         android:textStyle="bold"/>

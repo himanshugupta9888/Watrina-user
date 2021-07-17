@@ -42,6 +42,7 @@ class ActivityCardList : BaseActivity<ActivitySavedCardListBinding>(), CardListN
     private var strAmount: String? = null
     private var mCardNumber: String? = ""
     private var mCardCVV: String? = ""
+
     private var mCardExpiryDate: String? = ""
     private var mCardHolderName: String? = ""
     private var selectedCardID: String? = ""
